@@ -1,0 +1,129 @@
+﻿
+@{
+    ViewBag.Title = "Class";
+    Layout = "~/Views/Main/Navigate.cshtml";
+}
+<!-- Page Container -->
+<div class="class-page-container">
+    <h2 class="class-page-title">Welcome to the Class Portal</h2>
+
+    <div class="link-container">
+        <!-- Admin Login Link -->
+        <div class="login-link-card">
+            <a href="@Url.Action("AdminLogin", "Main")" class="login-link admin-link">
+                <div class="card-body">
+                    <i class="fas fa-user-shield"></i>
+                    <h3>Admin Login</h3>
+                    <p>Access the admin dashboard and manage all the operations.</p>
+                </div>
+            </a>
+        </div>
+
+        <!-- User Login Link -->
+        <div class="login-link-card">
+            <a href="@Url.Action("Login", "Main")" class="login-link user-link">
+                <div class="card-body">
+                    <i class="fas fa-user"></i>
+                    <h3>User Login</h3>
+                    <p>Login to view your courses, videos, and other resources.</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Styles -->
+<style>
+    /* Page Container */
+    .class-page-container {
+        text-align: center;
+        padding: 50px 20px;
+        background: #f4f7fa;
+    }
+
+    /* Title Styling */
+    .class-page-title {
+        font-size: 2.5em;
+        color: #333;
+        margin-bottom: 50px;
+        font-family: 'Arial', sans-serif;
+    }
+
+    /* Link Container Styling (Grid Layout) */
+    .link-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    /* Login Link Card Styling */
+    .login-link-card {
+        background: #fff;
+        border-radius: 10px;
+        width: 300px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        /* Hover Effect for Cards */
+        .login-link-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+        }
+
+    /* Login Link Styling */
+    .login-link {
+        display: block;
+        text-decoration: none;
+        color: #333;
+        padding: 20px;
+    }
+
+    /* Admin and User Link Variations */
+    .admin-link {
+        background-color: #4caf50;
+    }
+
+        .admin-link:hover {
+            background-color: #45a049;
+        }
+
+    .user-link {
+        background-color: #007bff;
+    }
+
+        .user-link:hover {
+            background-color: #0056b3;
+        }
+
+    /* Card Body Styling */
+    .card-body {
+        text-align: center;
+        padding: 20px;
+    }
+
+        /* Icon Styling */
+        .card-body i {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        /* Title and Text in Card */
+        .card-body h3 {
+            font-size: 1.8em;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .card-body p {
+            font-size: 1em;
+            color: #fff;
+            margin-bottom: 0;
+        }
+</style>
+
+<!-- FontAwesome Icons for Cards -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

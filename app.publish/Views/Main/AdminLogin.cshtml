@@ -1,0 +1,141 @@
+﻿@model Alturasphere_learning_Platform.Models.adminLogin
+@{
+    ViewBag.Title = "Admin Login";
+    Layout = "~/Views/Main/Navigate.cshtml";
+}
+
+<!-- Login Container -->
+<div class="login-container">
+    <h2 class="login-title">Admin Login</h2>
+
+    <!-- Error or Success Message -->
+    <div class="message">@ViewBag.Message</div>
+
+    <!-- Login Form -->
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <!-- Username Field -->
+        <div class="form-group">
+            <label for="Username" class="form-label">Username</label>
+            @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", placeholder = "Enter your username", required = "required", id = "Username" })
+            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group">
+            <label for="Passwords" class="form-label">Password</label>
+            @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Enter your password", required = "required", id = "Passwords" })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group text-center">
+            <input type="submit" name="B1" value="Login" class="btn btn-primary btn-block" />
+        </div>
+    }
+
+    <!-- Back Button -->
+    <div class="text-center">
+        <button class="btn btn-secondary" onclick="location.href='@Url.Action("Index", "Main/Class")'">Back</button>
+    </div>
+</div>
+
+<!-- Styles for the Login Page -->
+<style>
+    /* Container for the whole login form */
+    .login-container {
+        width: 100%;
+        max-width: 400px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Title of the login form */
+    .login-title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Styling for the form fields */
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #555;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+
+    .form-control:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    /* Submit button styling */
+    .btn {
+        width: 100%;
+        padding: 12px;
+        border-radius: 6px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        border: none;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: white;
+    }
+
+    .btn-secondary:hover {
+        background-color: #5a6268;
+    }
+
+    /* Message Box Styling */
+    .message {
+        text-align: center;
+        font-size: 14px;
+        color: #d9534f;
+        margin-bottom: 20px;
+    }
+
+    /* Responsive Design for Small Screens */
+    @@media (max-width: 576px) {
+        .login-container {
+            padding: 20px;
+        }
+
+        .login-title {
+            font-size: 22px;
+        }
+    }
+</style>

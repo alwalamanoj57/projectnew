@@ -1,0 +1,225 @@
+﻿
+@{
+    ViewBag.Title = "Task";
+    Layout = "~/Views/Main/Navigate.cshtml";
+
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Page - Altura Sphere Technologies</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+      /*  header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }*/
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+       h2 {
+            color: #007bff;
+            text-align: center;
+        }
+
+        .task-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+            .task-controls select,
+            .task-controls input {
+                padding: 10px;
+                font-size: 14px;
+                border: 1px solid #ddd;
+                border-radius: 4px;
+            }
+
+        .task-list {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+            .task-list th,
+            .task-list td {
+                border: 1px solid #ddd;
+                padding: 10px;
+                text-align: left;
+            }
+
+            .task-list th {
+                background-color: #f2f2f2;
+            }
+
+            .task-list tr:nth-child(even) {
+                background-color: #f9f9f9;
+            }
+
+            .task-list tr:hover {
+                background-color: #f1f1f1;
+            }
+
+        .status {
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+            .status.completed {
+                background-color: #28a745;
+                color: white;
+            }
+
+            .status.pending {
+                background-color: #ffc107;
+                color: white;
+            }
+
+            .status.overdue {
+                background-color: #dc3545;
+                color: white;
+            }
+
+        .task-pagination {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+            .task-pagination button {
+                padding: 10px 15px;
+                margin: 5px;
+                border: none;
+                border-radius: 4px;
+                background-color: #007bff;
+                color: white;
+                cursor: pointer;
+            }
+
+                .task-pagination button:hover {
+                    background-color: #0056b3;
+                }
+    </style>
+</head>
+<body>
+  
+    <div class="container">
+        <h2>Assigned Tasks</h2>
+
+        <!-- Task Filters and Controls -->
+        <div class="task-controls">
+            <div>
+                <label for="filter-status">Filter by Status:</label>
+                <select id="filter-status" onchange="filterTasks()">
+                    <option value="all">All</option>
+                    <option value="completed">Completed</option>
+                    <option value="pending">Pending</option>
+                    <option value="overdue">Overdue</option>
+                </select>
+            </div>
+            <div>
+                <label for="search">Search Task:</label>
+                <input type="text" id="search" oninput="searchTasks()" placeholder="Search by Task Name">
+            </div>
+        </div>
+
+        <!-- Task List Table -->
+        <table class="task-list" id="task-table">
+            <thead>
+                <tr>
+                    <th>Task Name</th>
+                    <th>Description</th>
+                    <th>Deadline</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Complete HTML Basics</td>
+                    <td>Finish reading and practicing all HTML topics.</td>
+                    <td>2024-11-20</td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td>CSS Project</td>
+                    <td>Create a personal portfolio using CSS techniques.</td>
+                    <td>2024-11-18</td>
+                    <td><span class="status completed">Completed</span></td>
+                </tr>
+                <tr>
+                    <td>JavaScript Quiz</td>
+                    <td>Attempt the JavaScript quiz on the platform.</td>
+                    <td>2024-11-22</td>
+                    <td><span class="status pending">Pending</span></td>
+                </tr>
+                <tr>
+                    <td>Database Assignment</td>
+                    <td>Design and implement a database for a sample project.</td>
+                    <td>2024-11-15</td>
+                    <td><span class="status overdue">Overdue</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Pagination -->
+        <div class="task-pagination">
+            <button onclick="prevPage()">Previous</button>
+            <button onclick="nextPage()">Next</button>
+        </div>
+    </div>
+
+    <script>
+        function filterTasks() {
+            const filter = document.getElementById("filter-status").value.toLowerCase();
+            const rows = document.querySelectorAll("#task-table tbody tr");
+            rows.forEach(row => {
+                const status = row.querySelector(".status").classList.contains(filter) || filter === "all";
+                row.style.display = status ? "" : "none";
+            });
+        }
+
+        function searchTasks() {
+            const query = document.getElementById("search").value.toLowerCase();
+            const rows = document.querySelectorAll("#task-table tbody tr");
+
+            rows.forEach(row => {
+                const taskName = row.querySelector("td:first-child").textContent.toLowerCase();
+                if (taskName.includes(query)) {
+                    row.style.display = ""; // Show the row if it matches the query
+                } else {
+                    row.style.display = "none"; // Hide the row if it doesn't match
+                }
+            });
+        }
+
+        function prevPage() {
+            alert("This is a placeholder for 'Previous Page' functionality.");
+        }
+
+        function nextPage() {
+            alert("This is a placeholder for 'Next Page' functionality.");
+        }
+
+    </script>
+</body>
+</html>
+

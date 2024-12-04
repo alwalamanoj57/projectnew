@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "LogOut";
+    Layout = "~/Views/Main/Navigate.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - E-Learning Platform</title>
+    <link rel="stylesheet" href="/Content/Logout.css"> <!-- External CSS for Logout page -->
+    <style>
+        /* General Styles */
+      /*  body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+             display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }*/
+
+        /* Logout Container */
+        .logout-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        /* Logout Card */
+        .logout-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 400px;
+            max-width: 90%;
+        }
+
+            .logout-card h2 {
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+
+            .logout-card p {
+                color: #666;
+                margin-bottom: 25px;
+            }
+
+        /* Buttons */
+        .logout-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+            .logout-buttons .btn {
+                text-decoration: none;
+                font-size: 16px;
+                padding: 10px 20px;
+                border-radius: 4px;
+                transition: background-color 0.3s ease;
+            }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+        }
+
+            .btn-danger:hover {
+                background-color: #a71d2a;
+            }
+
+        .btn-secondary {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+        }
+
+            .btn-secondary:hover {
+                background-color: #565e64;
+            }
+    </style>
+</head>
+<body>
+
+    <!-- Centered Logout Container -->
+    <div class="logout-container">
+        <div class="logout-card">
+            <h2>Are you sure you want to logout?</h2>
+            <p>Your progress is saved, and you can log back in anytime.</p>
+            <div class="logout-buttons">
+                <a href="/Home/LogoutAction" class="btn btn-danger">Logout</a>
+                <a href="/Home/Dashboard" class="btn btn-secondary">Cancel</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
