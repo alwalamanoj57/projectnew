@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Altura_Learning_WebsiteModelStoreContainer" CdmEntityContainer="Altura_Learning_WebsiteEntities">
+    <EntitySetMapping Name="adminLogin">
+      <EntityTypeMapping TypeName="Altura_Learning_WebsiteModel.adminLogin">
+        <MappingFragment StoreEntitySet="adminLogin">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="userLogin">
+      <EntityTypeMapping TypeName="Altura_Learning_WebsiteModel.userLogin">
+        <MappingFragment StoreEntitySet="userLogin">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

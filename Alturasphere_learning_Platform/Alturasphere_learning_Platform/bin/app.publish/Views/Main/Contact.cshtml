@@ -1,0 +1,232 @@
+﻿@model Alturasphere_learning_Platform.Models.contact
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Main/Navigate.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+       
+        .content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background-color: #00ffff;
+            color: white; /* Black text */
+            padding: 30px 0;
+            text-align: center;
+            font-size: 24px;
+            letter-spacing: 1px;
+        }
+        h2 {
+            color: #2a3d56;
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        nav {
+            background-color: #333;
+            padding: 12px 0;
+            
+            text-align: center;
+            height:55px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+            .contact-form input,
+            .contact-form textarea {
+                padding: 15px;
+                border: 2px solid #ccc;
+                border-radius: 5px;
+                font-size: 16px;
+                width: 100%;
+                transition: border-color 0.3s ease;
+            }
+
+                .contact-form input:focus,
+                .contact-form textarea:focus {
+                    border-color: #2a3d56;
+                    outline: none;
+                }
+
+                .contact-form input[type="submit"] {
+                    background-color: #2a3d56;
+                    color: white;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 18px;
+                    padding: 15px;
+                    border-radius: 5px;
+                    transition: background-color 0.3s ease;
+                }
+
+                    .contact-form input[type="submit"]:hover {
+                        background-color: #1e2a3d;
+                    }
+
+        /* Contact Information & Map */
+        .contact-details {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info,
+        .map-container {
+            flex: 1;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+            .contact-info:hover,
+            .map-container:hover {
+                transform: translateY(-5px);
+            }
+
+            .contact-info h3 {
+                color: #2a3d56;
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
+
+            .contact-info p {
+                font-size: 16px;
+                line-height: 1.6;
+                color: #666;
+            }
+
+            .contact-info a {
+                color: #2a3d56;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+                .contact-info a:hover {
+                    color: #1e2a3d;
+                }
+
+            /* Google Map Section */
+            .map-container iframe {
+                width: 100%;
+                height: 350px;
+                border: 0;
+                border-radius: 10px;
+            }
+
+        /* Responsive Design */
+        @@media screen and (max-width: 768px) {
+            .contact-details {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .contact-info,
+            .map-container {
+                width: 100%;
+                padding: 20px;
+            }
+
+            h2 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+    <!-- Main Content Area -->
+    <div class="content">
+        <h2>We'd love to hear from you!</h2>
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            @using (Html.BeginForm())
+            {
+                <div class="form-group">
+                    <label for="Name">Enter Your Name</label>
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control", required = "required", placeholder = "Your Name" })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label for="Email">Enter Your Email</label>
+                    @Html.TextBoxFor(model => model.email, new { @class = "form-control", required = "required", placeholder = "Your Email", type = "email" })
+                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    <label for="Message">Enter Your Message</label>
+                    @Html.TextAreaFor(model => model.Message, new { @class = "form-control", rows = "4", required = "required", placeholder = "Your Message" })
+                    @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group text-center">
+                    @ViewBag.Message
+                    <input type="submit" value="Send Message" class="btn btn-primary" />
+                </div>
+            }
+        </div>
+
+        <!-- Contact Information and Map -->
+        <div class="contact-details">
+            <!-- Contact Info Section -->
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <p><strong>Phone:</strong> 8499845526</p>
+                <p><strong>Email:</strong> <a href="mailto:info@alturasphere.com">info@alturasphere.com</a></p>
+                <p><strong>Address:</strong> Flat No. 302, Prudhvi Apartments, Street No. 8, Habsiguda, Hyderabad</p>
+            </div>
+
+            <!-- Google Map Section -->
+            <div class="map-container">
+                <h3>Our Location</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.8485399748477!2d78.54672241550942!3d17.3871409881154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf593f9d56c9%3A0xe38c4091b050ce64!2sHabsiguda%2C%20Hyderabad%2C%20Telangana%2C%20India!5e0!3m2!1sen!2sus!4v1630534770782!5m2!1sen!2sus"
+                        width="100" height="350" style="border-radius: 10px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

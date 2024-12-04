@@ -1,0 +1,201 @@
+﻿
+@{
+    ViewBag.Title = "OverView";
+    Layout = "~/Views/Main/Navigate.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overview - Altura Sphere Technologies</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f3f4f6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .h2 {
+            color: #007bff;
+        }
+
+        /* Overview Section */
+        .overview-container {
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .overview-summary {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+            width: 30%;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+            .card:hover {
+                transform: scale(1.05);
+            }
+
+            .card h2 {
+                margin-bottom: 10px;
+            }
+
+        .progress-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .progress-bar {
+            background: #eee;
+            border-radius: 20px;
+            width: 80%;
+            margin: 20px auto;
+            height: 30px;
+            overflow: hidden;
+        }
+
+        .progress {
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            height: 100%;
+            line-height: 30px;
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+            width: 75%; /* Initial progress */
+        }
+
+        /* Announcements Section */
+        .announcements {
+            padding: 20px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+            .announcements h2 {
+                margin-bottom: 10px;
+            }
+
+            .announcements ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .announcements li {
+                margin-bottom: 10px;
+                font-size: 16px;
+                color: #555;
+            }
+
+                .announcements li::before {
+                    content: "• ";
+                    color: #007bff;
+                    font-weight: bold;
+                }
+
+        /* Footer Section */
+        /* footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            font-size: 14px;
+        }*/
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Overview Section -->
+        <div class="overview-container">
+            <h1>Welcome to Your Learning Dashboard</h1>
+            <div class="overview-summary">
+                <div class="card">
+                    <h2>Completed Courses</h2>
+                    <p><span id="completed-courses">5</span></p>
+                </div>
+                <div class="card">
+                    <h2>Ongoing Lessons</h2>
+                    <p><span id="ongoing-lessons">2</span></p>
+                </div>
+                <div class="card">
+                    <h2>Upcoming Tasks</h2>
+                    <p><span id="upcoming-tasks">3</span></p>
+                </div>
+            </div>
+            <div class="progress-section">
+                <h2>Your Progress</h2>
+                <div class="progress-bar">
+                    <div class="progress" id="progress">75%</div>
+                </div>
+            </div>
+            <div class="announcements">
+                <h2>Announcements</h2>
+                <ul id="announcements-list">
+                    <li>New lesson "Advanced JavaScript" is now available!</li>
+                    <li>Assignment 3 is due on November 20th.</li>
+                    <li>Live Q&A session scheduled for Friday.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    @*<footer>
+            © 2024 Altura Sphere Technologies. All rights reserved.
+        </footer>*@
+
+    <script>
+        // Update announcements dynamically (Optional)
+        const announcements = [
+            "New lesson 'React Basics' added to the curriculum!",
+            "Midterm project submission deadline is December 1st.",
+            "Weekly meeting scheduled for Monday at 4 PM."
+        ];
+
+        const announcementsList = document.getElementById("announcements-list");
+        announcements.forEach(announcement => {
+            const li = document.createElement("li");
+            li.textContent = announcement;
+            announcementsList.appendChild(li);
+        });
+
+        // Example progress bar animation
+        const progressBar = document.getElementById("progress");
+        let progress = 75;
+
+        function animateProgressBar() {
+            progress = Math.min(100, progress + 0.5); // Example increment
+            progressBar.style.width = `${progress}%`;
+            progressBar.textContent = `${progress}%`;
+            if (progress < 100) {
+                setTimeout(animateProgressBar, 50);
+            }
+        }
+
+        animateProgressBar();
+    </script>
+</body>
+</html>

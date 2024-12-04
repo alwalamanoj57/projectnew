@@ -1,0 +1,2311 @@
+﻿@{
+    ViewBag.Title = "Services";
+    Layout = "~/Views/Main/Navigate.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <!-- Add Bootstrap CDN for styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    /* General body and page styling */
+    body {
+        background: #f4f7fc;
+        color: #333;
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Header Section Styling */
+    .services-header {
+        text-align: center;
+        margin-bottom: 60px;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .services-header h1 {
+        font-size: 36px;
+        font-weight: bold;
+        color: #2c3e50;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        animation: slideInFromTop 1s ease-in-out;
+    }
+
+    /* Cards Container Styling */
+    .card {
+        margin-bottom: 30px;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        animation: cardFadeIn 0.8s ease-out;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0px 15px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-header {
+        background-color: #2980b9;
+        color: #fff;
+        font-weight: bold;
+        padding: 20px;
+        border-radius: 10px 10px 0 0;
+        text-align: center;
+        animation: fadeIn 1.2s ease-in-out;
+    }
+
+    .card-body {
+        background-color: #ecf0f1;
+        padding: 20px;
+        border-radius: 0 0 10px 10px;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #555;
+        animation: slideInFromBottom 1s ease-in-out;
+    }
+
+    /* Quick Links Section Styling */
+    .quick-links {
+        margin-top: 50px;
+        text-align: center;
+        animation: fadeIn 1s ease-in-out;
+    }
+
+    .quick-links a {
+        margin: 0 15px;
+        font-size: 18px;
+        color: #2980b9;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .quick-links a:hover {
+        text-decoration: underline;
+        color: #1abc9c;
+        transform: translateY(-5px);
+    }
+
+    /* CSS Animations */
+    @@keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @@keyframes slideInFromTop {
+        0% {
+            transform: translateY(-30px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @@keyframes slideInFromBottom {
+        0% {
+            transform: translateY(30px);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    @@keyframes cardFadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Responsive Design */
+    @@media screen and (max-width: 768px) {
+        .services-header h1 {
+            font-size: 28px;
+        }
+
+        .quick-links a {
+            font-size: 16px;
+            margin: 0 10px;
+        }
+
+        .card-body {
+            font-size: 14px;
+        }
+    }
+    </style>
+
+</head>
+<body>
+
+    <div class="container my-5">
+        <!-- Service Headings Section -->
+        <div class="services-header">
+            <h1>Internship, Training & Placement Opportunities</h1>
+            <p>Explore our detailed syllabus for Power BI, Salesforce, and Cloud Engineering courses designed to enhance your skills and career.</p>
+        </div>
+
+        <!-- Internship, Training, Placement Section -->
+        <div class="row">
+            <!-- Internship Section -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">Internship</div>
+                    <div class="card-body">
+                        <p>Gain hands-on experience with industry-leading tools and platforms. Start your career with practical knowledge!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Training Section -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">Training</div>
+                    <div class="card-body">
+                        <p>We offer comprehensive training programs to develop your technical and soft skills for a brighter future.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Placement Opportunity Section -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">Placement Opportunities</div>
+                    <div class="card-body">
+                        <p>Our placement assistance services will help you secure the right job post-training and internship.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Links Section Below Internship, Training, and Placement -->
+        <div class="quick-links">
+            <a href="#PowerBi" class="btn btn-link">PowerBi Syllabus</a>
+            <a href="#SalesForce" class="btn btn-link">SalesForce Syllabus</a>
+            <a href="#FullStack" class="btn btn-link">Full Stack Web Development Syllabus</a>
+            <a href="#wordpressSyllabus" class="btn btn-link">WordPress Syllabus</a>
+            <a href="#AndroidDev" class="btn btn-link">Android Developer Syllabus</a>
+            <a href="#CloudEng" class="btn btn-link">Cloud Engineer Syllabus</a>
+            <a href="#DataScience" class="btn btn-link">Data Science Syllabus</a>
+            <a href="#DevOps" class="btn btn-link">DevOps Engineer Syllabus</a>
+            <a href="#MachineLearning" class="btn btn-link">Machine Learning Syllabus</a>
+            <a href="#NetworkAdministration" class="btn btn-link">Network Administration Syllabus</a>
+            <a href="#NetworkProgramming" class="btn btn-link">Network Programmer Syllabus</a>
+            <a href="#SoftwareEng" class="btn btn-link">Software Engineering Syllabus</a>
+            <a href="#SoftwareTesting" class="btn btn-link">Software Tester Syllabus</a>
+        </div>
+
+
+        <!-- Power BI Syllabus Section -->
+        <!-- Power BI Syllabus Section -->
+        <div class="card mt-5" id="PowerBi">
+            <div class="card-header">Power BI Syllabus</div>
+            <div class="card-body">
+                <h4>Modules</h4>
+                <div id="accordion">
+
+                    <!-- Module 1: Introduction to Power BI -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingPowerBiOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePowerBiOne" aria-expanded="true" aria-controls="collapsePowerBiOne">
+                                Chapter 1: Introduction to Power BI
+                            </button>
+                        </h2>
+                        <div id="collapsePowerBiOne" class="accordion-collapse collapse show" aria-labelledby="headingPowerBiOne" data-bs-parent="#accordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Topic 1: Power BI Desktop Installation and User Interface</li>
+                                    <li>Topic 2: Introduction to Power BI</li>
+                                    <li>Topic 3: Power BI File Types and Data Connections</li>
+                                    <li>Topic 4: Understanding Power BI Desktop and Power BI Service</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 2: Data Connectivity and Transformation -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingPowerBiTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePowerBiTwo" aria-expanded="false" aria-controls="collapsePowerBiTwo">
+                                Chapter 2: Data Connectivity and Transformation
+                            </button>
+                        </h2>
+                        <div id="collapsePowerBiTwo" class="accordion-collapse collapse" aria-labelledby="headingPowerBiTwo" data-bs-parent="#accordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Topic 1: Connecting to Data Sources in Power BI Desktop</li>
+                                    <li>Topic 2: Data Transformation using Power Query Editor</li>
+                                    <li>Topic 3: Data Transformation Example – I</li>
+                                    <li>Topic 4: Data Transformation Example – II</li>
+                                    <li>Topic 5: Data Transformation Example – III</li>
+                                    <li>Topic 6: Data Transformation Example – IV</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 3: Data Modeling and DAX -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingPowerBiThree">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePowerBiThree" aria-expanded="false" aria-controls="collapsePowerBiThree">
+                                Chapter 3: Data Modeling and DAX
+                            </button>
+                        </h2>
+                        <div id="collapsePowerBiThree" class="accordion-collapse collapse" aria-labelledby="headingPowerBiThree" data-bs-parent="#accordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Topic 1: Data Expressions Applications – I</li>
+                                    <li>Topic 2: Data Expressions Applications – II</li>
+                                    <li>Topic 3: Data Expressions Applications – III</li>
+                                    <li>Topic 4: DAX Applications</li>
+                                    <li>Topic 5: Data Applications</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 4: Report Creations and Data Visualization -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingPowerBiFour">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePowerBiFour" aria-expanded="false" aria-controls="collapsePowerBiFour">
+                                Chapter 4: Report Creations and Data Visualization
+                            </button>
+                        </h2>
+                        <div id="collapsePowerBiFour" class="accordion-collapse collapse" aria-labelledby="headingPowerBiFour" data-bs-parent="#accordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Topic 1: Data Visualization and Report Creation</li>
+                                    <li>Topic 2: Enhancing and Publishing Reports</li>
+                                    <li>Topic 3: Identifying Trends and Patterns</li>
+                                    <li>Topic 4: Building and Publishing Paginated Reports</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 5: Dashboard Creation, Sharing, and Collaboration -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingPowerBiFive">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePowerBiFive" aria-expanded="false" aria-controls="collapsePowerBiFive">
+                                Chapter 5: Dashboard Creation, Sharing, and Collaboration
+                            </button>
+                        </h2>
+                        <div id="collapsePowerBiFive" class="accordion-collapse collapse" aria-labelledby="headingPowerBiFive" data-bs-parent="#accordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Topic 1: Creating and Managing Dashboards</li>
+                                    <li>Topic 2: Managing Dataset Configuration and Permissions</li>
+                                    <li>Topic 3: Creating and Managing Workspaces and Apps</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 6: Capstone Project -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingPowerBiSix">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePowerBiSix" aria-expanded="false" aria-controls="collapsePowerBiSix">
+                                Chapter 6: Capstone Project
+                            </button>
+                        </h2>
+                        <div id="collapsePowerBiSix" class="accordion-collapse collapse" aria-labelledby="headingPowerBiSix" data-bs-parent="#accordion">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>Topic 1: Capstone Project to demonstrate learned Power BI skills</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Salesforce Syllabus Section -->
+        <div class="card mt-5" id="SalesForce">
+            <div class="card-header">Salesforce Syllabus</div>
+            <div class="card-body">
+                <h4>Modules</h4>
+                <div>
+                    <!-- Module 1: Courses Overview -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceOne" aria-expanded="true" aria-controls="collapseSalesforceOne">
+                                1. Courses Overview
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceOne" class="accordion-collapse collapse show" aria-labelledby="headingSalesforceOne" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <p>Introduction to the Salesforce Course, objectives, and structure.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 2: Web Application Fundamentals -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceTwo" aria-expanded="false" aria-controls="collapseSalesforceTwo">
+                                2. Web Application Fundamentals
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceTwo" class="accordion-collapse collapse" aria-labelledby="headingSalesforceTwo" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. Web Application Architecture</li>
+                                    <li>ii. Web Technologies</li>
+                                    <li>iii. Salesforce Technologies</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 3: Before Development -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceThree">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceThree" aria-expanded="false" aria-controls="collapseSalesforceThree">
+                                3. Before Development
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceThree" class="accordion-collapse collapse" aria-labelledby="headingSalesforceThree" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. Your Questions</li>
+                                    <li>ii. Declarative Tools in Salesforce</li>
+                                    <li>iii. Create Salesforce Dev Org</li>
+                                    <li>iv. Code Editors for Salesforce Development</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 4: Apex Fundamentals -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceFour">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceFour" aria-expanded="false" aria-controls="collapseSalesforceFour">
+                                4. Apex Fundamentals
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceFour" class="accordion-collapse collapse" aria-labelledby="headingSalesforceFour" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. Hello World</li>
+                                    <li>ii. Variables and Heap</li>
+                                    <li>iii. Primitive Data Types</li>
+                                    <li>iv. String Class Methods</li>
+                                    <li>v. Escape Character</li>
+                                    <li>vi. Adding Comments in your Code</li>
+                                    <li>vii. List Datatype – Collections in Apex</li>
+                                    <li>viii. Set Datatype – Collection in Apex</li>
+                                    <li>ix. Map Datatype – Collection in Apex</li>
+                                    <li>x. Challenge 1 – Variables and Datatype</li>
+                                    <li>xi. Challenge Solutions – Variables and Datatypes</li>
+                                    <li>xii. Constants in Apex</li>
+                                    <li>xiii. Expressions and Operations – Intro</li>
+                                    <li>xiv. Operators</li>
+                                    <li>xv. Challenges 2 – Operators</li>
+                                    <li>xvi. Challenges Solution – Operations</li>
+                                    <li>xvii. Safe Navigation Operator</li>
+                                    <li>xviii. Null Coalescing Operator</li>
+                                    <li>xix. Datatype Conversion</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 5: Control Flow Statements -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceFive">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceFive" aria-expanded="false" aria-controls="collapseSalesforceFive">
+                                5. Control Flow Statements
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceFive" class="accordion-collapse collapse" aria-labelledby="headingSalesforceFive" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. If-Else Statement</li>
+                                    <li>ii. Switch-When Statement</li>
+                                    <li>iii. Challenge 3 - Conditional Statement</li>
+                                    <li>iv. Challenge Solution - Conditional Statements</li>
+                                    <li>v. The Story of If-Else vs Switch-When</li>
+                                    <li>vi. Loops in Apex - Do-While Loop</li>
+                                    <li>vii. Challenge 4 - Do-While Loop</li>
+                                    <li>viii. Challenge Solution - Do-While Loop</li>
+                                    <li>ix. While Loop</li>
+                                    <li>x. Challenge 5 - While Loop</li>
+                                    <li>xi. Challenge Solution - While Loop</li>
+                                    <li>xii. For Loop</li>
+                                    <li>xiii. Challenge 6 - For Loop</li>
+                                    <li>xiv. Challenge Solution - For Loop</li>
+                                    <li>xv. Break Statement - Breaking a Loop</li>
+                                    <li>xvi. Continue Statement - Skipping Loop Iteration</li>
+                                    <li>xvii. List Iteration for Loops</li>
+                                    <li>xviii. You Are a Developer</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 6: Apex Classes -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceSix">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceSix" aria-expanded="false" aria-controls="collapseSalesforceSix">
+                                6. Apex Classes
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceSix" class="accordion-collapse collapse" aria-labelledby="headingSalesforceSix" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. Class Definition and Methods</li>
+                                    <li>ii. Instance vs Static Variables</li>
+                                    <li>iii. Constructors in Apex</li>
+                                    <li>iv. Getter and Setter Methods</li>
+                                    <li>v. Challenge 7 - Apex Class</li>
+                                    <li>vi. Challenge Solution - Apex Class</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 7: Visualforce Pages -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceSeven">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceSeven" aria-expanded="false" aria-controls="collapseSalesforceSeven">
+                                7. Visualforce Pages
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceSeven" class="accordion-collapse collapse" aria-labelledby="headingSalesforceSeven" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. Visualforce Page Basics</li>
+                                    <li>ii. Standard and Custom Controllers</li>
+                                    <li>iii. VF Pages with Apex</li>
+                                    <li>iv. Challenge 8 - Visualforce</li>
+                                    <li>v. Challenge Solution - Visualforce</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 8: SOQL & SOSL -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceEight">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceEight" aria-expanded="false" aria-controls="collapseSalesforceEight">
+                                8. SOQL & SOSL
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceEight" class="accordion-collapse collapse" aria-labelledby="headingSalesforceEight" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. SOQL Basics</li>
+                                    <li>ii. SOSL Overview</li>
+                                    <li>iii. Querying with Apex</li>
+                                    <li>iv. Challenge 9 - SOQL Query</li>
+                                    <li>v. Challenge Solution - SOQL Query</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 9: DML Operations -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceNine">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceNine" aria-expanded="false" aria-controls="collapseSalesforceNine">
+                                9. DML Operations
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceNine" class="accordion-collapse collapse" aria-labelledby="headingSalesforceNine" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. DML Basics</li>
+                                    <li>ii. DML in Apex</li>
+                                    <li>iii. DML Limitations</li>
+                                    <li>iv. Challenge 10 - DML Operations</li>
+                                    <li>v. Challenge Solution - DML Operations</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 10: Apex Testing -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceTen">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceTen" aria-expanded="false" aria-controls="collapseSalesforceTen">
+                                10. Apex Testing
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceTen" class="accordion-collapse collapse" aria-labelledby="headingSalesforceTen" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. Introduction to Apex Testing</li>
+                                    <li>ii. Writing Test Methods</li>
+                                    <li>iii. Test Data and Assert Statements</li>
+                                    <li>iv. Test Coverage</li>
+                                    <li>v. Challenge 11 - Apex Testing</li>
+                                    <li>vi. Challenge Solution - Apex Testing</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 11: Trigger Basics -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceEleven">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceEleven" aria-expanded="false" aria-controls="collapseSalesforceEleven">
+                                11. Trigger Basics
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceEleven" class="accordion-collapse collapse" aria-labelledby="headingSalesforceEleven" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. What is a Trigger?</li>
+                                    <li>ii. Trigger Context Variables</li>
+                                    <li>iii. Trigger Best Practices</li>
+                                    <li>iv. Trigger Example</li>
+                                    <li>v. Challenge 12 - Trigger</li>
+                                    <li>vi. Challenge Solution - Trigger</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 12: Advanced Trigger Techniques -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceTwelve">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceTwelve" aria-expanded="false" aria-controls="collapseSalesforceTwelve">
+                                12. Advanced Trigger Techniques
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceTwelve" class="accordion-collapse collapse" aria-labelledby="headingSalesforceTwelve" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. Trigger Framework</li>
+                                    <li>ii. Bulkification</li>
+                                    <li>iii. Recursive Triggers</li>
+                                    <li>iv. Challenge 13 - Advanced Trigger</li>
+                                    <li>v. Challenge Solution - Advanced Trigger</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 13: Salesforce Lightning -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceThirteen">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceThirteen" aria-expanded="false" aria-controls="collapseSalesforceThirteen">
+                                13. Salesforce Lightning
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceThirteen" class="accordion-collapse collapse" aria-labelledby="headingSalesforceThirteen" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. Introduction to Lightning</li>
+                                    <li>ii. Lightning Components</li>
+                                    <li>iii. Lightning App Builder</li>
+                                    <li>iv. Challenge 14 - Lightning Components</li>
+                                    <li>v. Challenge Solution - Lightning Components</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 14: Salesforce UI Customization -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceFourteen">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceFourteen" aria-expanded="false" aria-controls="collapseSalesforceFourteen">
+                                14. Salesforce UI Customization
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceFourteen" class="accordion-collapse collapse" aria-labelledby="headingSalesforceFourteen" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. Custom Pages</li>
+                                    <li>ii. Page Layouts</li>
+                                    <li>iii. Visualforce Pages</li>
+                                    <li>iv. Challenge 15 - UI Customization</li>
+                                    <li>v. Challenge Solution - UI Customization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 15: Batch Apex -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceFifteen">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceFifteen" aria-expanded="false" aria-controls="collapseSalesforceFifteen">
+                                15. Batch Apex
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceFifteen" class="accordion-collapse collapse" aria-labelledby="headingSalesforceFifteen" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. What is Batch Apex?</li>
+                                    <li>ii. Batch Apex Interface</li>
+                                    <li>iii. Challenge 16 - Batch Apex</li>
+                                    <li>iv. Challenge Solution - Batch Apex</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 16: Queueable Apex -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceSixteen">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceSixteen" aria-expanded="false" aria-controls="collapseSalesforceSixteen">
+                                16. Queueable Apex
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceSixteen" class="accordion-collapse collapse" aria-labelledby="headingSalesforceSixteen" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. Introduction to Queueable Apex</li>
+                                    <li>ii. Queueable Apex Interface</li>
+                                    <li>iii. Challenge 17 - Queueable Apex</li>
+                                    <li>iv. Challenge Solution - Queueable Apex</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 17: Scheduled Apex -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceSeventeen">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceSeventeen" aria-expanded="false" aria-controls="collapseSalesforceSeventeen">
+                                17. Scheduled Apex
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceSeventeen" class="accordion-collapse collapse" aria-labelledby="headingSalesforceSeventeen" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. What is Scheduled Apex?</li>
+                                    <li>ii. Scheduled Apex Methods</li>
+                                    <li>iii. Challenge 18 - Scheduled Apex</li>
+                                    <li>iv. Challenge Solution - Scheduled Apex</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 18: Asynchronous Apex -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceEighteen">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceEighteen" aria-expanded="false" aria-controls="collapseSalesforceEighteen">
+                                18. Asynchronous Apex
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceEighteen" class="accordion-collapse collapse" aria-labelledby="headingSalesforceEighteen" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. What is Asynchronous Apex?</li>
+                                    <li>ii. Use Cases for Asynchronous Apex</li>
+                                    <li>iii. Challenge 19 - Asynchronous Apex</li>
+                                    <li>iv. Challenge Solution - Asynchronous Apex</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 19: Salesforce Security -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceNineteen">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceNineteen" aria-expanded="false" aria-controls="collapseSalesforceNineteen">
+                                19. Salesforce Security
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceNineteen" class="accordion-collapse collapse" aria-labelledby="headingSalesforceNineteen" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. User Permissions</li>
+                                    <li>ii. Field-Level Security</li>
+                                    <li>iii. Object-Level Security</li>
+                                    <li>iv. Challenge 20 - Security in Salesforce</li>
+                                    <li>v. Challenge Solution - Security in Salesforce</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 20: Salesforce Integrations -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceTwenty">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceTwenty" aria-expanded="false" aria-controls="collapseSalesforceTwenty">
+                                20. Salesforce Integrations
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceTwenty" class="accordion-collapse collapse" aria-labelledby="headingSalesforceTwenty" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. REST API</li>
+                                    <li>ii. SOAP API</li>
+                                    <li>iii. Apex Callouts</li>
+                                    <li>iv. Challenge 21 - Integrating Salesforce</li>
+                                    <li>v. Challenge Solution - Integrating Salesforce</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 21: Salesforce Deployment -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceTwentyOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceTwentyOne" aria-expanded="false" aria-controls="collapseSalesforceTwentyOne">
+                                21. Salesforce Deployment
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceTwentyOne" class="accordion-collapse collapse" aria-labelledby="headingSalesforceTwentyOne" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. Salesforce Deployment Tools</li>
+                                    <li>ii. Change Sets</li>
+                                    <li>iii. Salesforce DX</li>
+                                    <li>iv. Challenge 22 - Salesforce Deployment</li>
+                                    <li>v. Challenge Solution - Salesforce Deployment</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 22: Advanced Salesforce Topics -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceTwentyTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceTwentyTwo" aria-expanded="false" aria-controls="collapseSalesforceTwentyTwo">
+                                22. Advanced Salesforce Topics
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceTwentyTwo" class="accordion-collapse collapse" aria-labelledby="headingSalesforceTwentyTwo" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. Advanced Apex Programming</li>
+                                    <li>ii. Advanced Lightning Components</li>
+                                    <li>iii. Advanced Security in Salesforce</li>
+                                    <li>iv. Challenge 23 - Advanced Salesforce Topics</li>
+                                    <li>v. Challenge Solution - Advanced Salesforce Topics</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Module 23: Salesforce Best Practices -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSalesforceTwentyThree">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSalesforceTwentyThree" aria-expanded="false" aria-controls="collapseSalesforceTwentyThree">
+                                23. Salesforce Best Practices
+                            </button>
+                        </h2>
+                        <div id="collapseSalesforceTwentyThree" class="accordion-collapse collapse" aria-labelledby="headingSalesforceTwentyThree" data-bs-parent="#accordionSalesforce">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>i. Apex Best Practices</li>
+                                    <li>ii. Lightning Components Best Practices</li>
+                                    <li>iii. Salesforce Security Best Practices</li>
+                                    <li>iv. General Salesforce Best Practices</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cloud Engineering Syllabus Section -->
+        <div class="card mt-5" id="CloudEng">
+            <div class="card-header">Cloud Engineering Syllabus</div>
+            <div class="card-body">
+                <h4>Modules</h4>
+                <div>
+                    <!-- Module 1: Introduction to Cloud Computing -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingCloudOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCloudOne" aria-expanded="true" aria-controls="collapseCloudOne">
+                                1. Introduction to Cloud Computing
+                            </button>
+                        </h2>
+                        <div id="collapseCloudOne" class="accordion-collapse collapse show" aria-labelledby="headingCloudOne" data-bs-parent="#accordionCloudEngineering">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>I. Overview of Cloud Computing</li>
+                                    <li>II. Cloud Service Models (IaaS, PaaS, SaaS)</li>
+                                    <li>III. Introduction to Cloud Providers (AWS, Azure, Google Cloud)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 2: Virtualization and Networking -->
+                    <div class="accordion-item" id="CloudTwo">
+                        <h2 class="accordion-header" id="headingCloudTwo">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCloudTwo" aria-expanded="false" aria-controls="collapseCloudTwo">
+                                2. Virtualization and Networking
+                            </button>
+                        </h2>
+                        <div class="accordion-collapse collapse" aria-labelledby="headingCloudTwo" data-bs-parent="#accordionCloudEngineering">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>I. Virtual Machines and Containers</li>
+                                    <li>II. Cloud Networking and Security</li>
+                                    <li>III. Load Balancing and Auto Scaling</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 3: Cloud Storage and Databases -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingCloudThree">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCloudThree" aria-expanded="false" aria-controls="collapseCloudThree">
+                                3. Cloud Storage and Databases
+                            </button>
+                        </h2>
+                        <div id="collapseCloudThree" class="accordion-collapse collapse" aria-labelledby="headingCloudThree" data-bs-parent="#accordionCloudEngineering">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>I. Object Storage and File Systems</li>
+                                    <li>II. Cloud Databases (SQL and NoSQL)</li>
+                                    <li>III. Distributed Databases</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 4: Security and Compliance in Cloud -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingCloudFour">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCloudFour" aria-expanded="false" aria-controls="collapseCloudFour">
+                                4. Security and Compliance in Cloud
+                            </button>
+                        </h2>
+                        <div id="collapseCloudFour" class="accordion-collapse collapse" aria-labelledby="headingCloudFour" data-bs-parent="#accordionCloudEngineering">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>I. Cloud Security Principles</li>
+                                    <li>II. Identity and Access Management (IAM)</li>
+                                    <li>III. Compliance Standards (GDPR, HIPAA, etc.)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 5: Cloud DevOps and Automation -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingCloudFive">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCloudFive" aria-expanded="false" aria-controls="collapseCloudFive">
+                                5. Cloud DevOps and Automation
+                            </button>
+                        </h2>
+                        <div id="collapseCloudFive" class="accordion-collapse collapse" aria-labelledby="headingCloudFive" data-bs-parent="#accordionCloudEngineering">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>I. Introduction to DevOps in Cloud</li>
+                                    <li>II. Continuous Integration and Deployment (CI/CD)</li>
+                                    <li>III. Infrastructure as Code (Terraform, AWS CloudFormation)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 6: Cloud Monitoring and Cost Optimization -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingCloudSix">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCloudSix" aria-expanded="false" aria-controls="collapseCloudSix">
+                                6. Cloud Monitoring and Cost Optimization
+                            </button>
+                        </h2>
+                        <div id="collapseCloudSix" class="accordion-collapse collapse" aria-labelledby="headingCloudSix" data-bs-parent="#accordionCloudEngineering">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>I. Cloud Monitoring Tools (AWS CloudWatch, Azure Monitor)</li>
+                                    <li>II. Cost Management and Optimization Techniques</li>
+                                    <li>III. Resource Scaling and Cost Management Strategies</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 7: Capstone Project and Certification -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingCloudSeven">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCloudSeven" aria-expanded="false" aria-controls="collapseCloudSeven">
+                                7. Capstone Project and Certification
+                            </button>
+                        </h2>
+                        <div id="collapseCloudSeven" class="accordion-collapse collapse" aria-labelledby="headingCloudSeven" data-bs-parent="#accordionCloudEngineering">
+                            <div class="accordion-body">
+                                <ul>
+                                    <li>I. Capstone Project Overview</li>
+                                    <li>II. Building a Cloud Solution</li>
+                                    <li>III. Certification Preparation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-5" id="FullStack">
+                        <div class="card-header">Full Stack Web Development Syllabus</div>
+                        <div class="card-body">
+                            <h4>Modules</h4>
+
+
+                            <!-- Additional Full Stack Web Development Modules -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFullStackTwo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFullStackTwo" aria-expanded="false" aria-controls="collapseFullStackTwo">
+                                        Chapter 1: Introduction to Web Development
+                                    </button>
+                                </h2>
+                                <div id="collapseFullStackTwo" class="accordion-collapse collapse" aria-labelledby="headingFullStackTwo" data-bs-parent="#accordionFullStack">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Understanding the Basics of the Web</li>
+                                            <li>Topic 2: How Browsers Work</li>
+                                            <li>Topic 3: Setting Up Your Development Environment</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFullStackThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFullStackThree" aria-expanded="false" aria-controls="collapseFullStackThree">
+                                        Chapter 2: Front-End Development
+                                    </button>
+                                </h2>
+                                <div id="collapseFullStackThree" class="accordion-collapse collapse" aria-labelledby="headingFullStackThree" data-bs-parent="#accordionFullStack">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Introduction to HTML and CSS</li>
+                                            <li>Topic 2: Mastering JavaScript Fundamentals</li>
+                                            <li>Topic 3: Responsive Web Design with CSS</li>
+                                            <li>Topic 4: Building User Interfaces with React</li>
+                                            <li>Topic 5: Advanced React Concepts</li>
+                                            <li>Topic 6: State Management (Redux or Context API)</li>
+                                            <li>Topic 7: Routing with React Router</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFullStackFour">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFullStackFour" aria-expanded="false" aria-controls="collapseFullStackFour">
+                                        Chapter 3: Back-End Development (Node.js)
+                                    </button>
+                                </h2>
+                                <div id="collapseFullStackFour" class="accordion-collapse collapse" aria-labelledby="headingFullStackFour" data-bs-parent="#accordionFullStack">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Introduction to Server-Side Development</li>
+                                            <li>Topic 2: Node.js and Express.js Fundamentals</li>
+                                            <li>Topic 3: Database Design and Management</li>
+                                            <li>Topic 4: API Development with Express.js</li>
+                                            <li>Topic 5: Authentication and Authorization</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFullStackFive">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFullStackFive" aria-expanded="false" aria-controls="collapseFullStackFive">
+                                        Chapter 4: Databases
+                                    </button>
+                                </h2>
+                                <div id="collapseFullStackFive" class="accordion-collapse collapse" aria-labelledby="headingFullStackFive" data-bs-parent="#accordionFullStack">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: SQL and Relational Databases</li>
+                                            <li>Topic 2: Working with MongoDB (NoSQL)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFullStackSix">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFullStackSix" aria-expanded="false" aria-controls="collapseFullStackSix">
+                                        Chapter 5: Server-Side Rendering
+                                    </button>
+                                </h2>
+                                <div id="collapseFullStackSix" class="accordion-collapse collapse" aria-labelledby="headingFullStackSix" data-bs-parent="#accordionFullStack">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Introduction to Next.js</li>
+                                            <li>Topic 2: Server-Side Rendering with Next.js</li>
+                                            <li>Topic 3: Data Fetching in Next.js</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFullStackSeven">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFullStackSeven" aria-expanded="false" aria-controls="collapseFullStackSeven">
+                                        Chapter 6: Deployment and DevOps
+                                    </button>
+                                </h2>
+                                <div id="collapseFullStackSeven" class="accordion-collapse collapse" aria-labelledby="headingFullStackSeven" data-bs-parent="#accordionFullStack">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Version Control with Git</li>
+                                            <li>Topic 2: Hosting and Deployment Platforms (e.g., Heroku, AWS)</li>
+                                            <li>Topic 3: Continuous Integration and Deployment (CI/CD)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFullStackEight">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFullStackEight" aria-expanded="false" aria-controls="collapseFullStackEight">
+                                        Chapter 7: Design Major Project
+                                    </button>
+                                </h2>
+                                <div id="collapseFullStackEight" class="accordion-collapse collapse" aria-labelledby="headingFullStackEight" data-bs-parent="#accordionFullStack">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Project Idea and Planning</li>
+                                            <li>Topic 2: Design and Wireframing</li>
+                                            <li>Topic 3: Front-End Development</li>
+                                            <li>Topic 4: Back-End Development</li>
+                                            <li>Topic 5: Database Integration</li>
+                                            <li>Topic 6: User Authentication and Authorization</li>
+                                            <li>Topic 7: Testing and Debugging</li>
+                                            <li>Topic 8: Deployment and Scaling</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingFullStackNine">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFullStackNine" aria-expanded="false" aria-controls="collapseFullStackNine">
+                                        Chapter 8: Real-World Projects
+                                    </button>
+                                </h2>
+                                <div id="collapseFullStackNine" class="accordion-collapse collapse" aria-labelledby="headingFullStackNine" data-bs-parent="#accordionFullStack">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: E-commerce Website with Payment Gateway</li>
+                                            <li>Topic 2: Social Media Application</li>
+                                            <li>Topic 3: Blog Platform with User Authentication</li>
+                                            <li>Topic 4: Task Management System</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- WordPress Syllabus Section -->
+                <div class="card mt-5" id="wordpressSyllabus">
+                    <div class="card-header">WordPress Syllabus</div>
+                    <div class="card-body">
+                        <h4>Modules</h4>
+                        <div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingWordPressOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWordPressOne" aria-expanded="true" aria-controls="collapseWordPressOne">
+                                        Chapter 1: Introduction to WordPress
+                                    </button>
+                                </h2>
+                                <div id="collapseWordPressOne" class="accordion-collapse collapse show" aria-labelledby="headingWordPressOne" data-bs-parent="#accordionWordPress">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: WordPress Installation and Setup</li>
+                                            <li>Topic 2:Theme and Plugin Installation</li>
+                                            <li>Topic 3:Creating Pages, Posts, and Media</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingWordPressTwo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWordPressTwo" aria-expanded="true" aria-controls="collapseWordPressTwo">
+                                        Chapter 2: Front-End Development
+                                    </button>
+                                </h2>
+                                <div id="collapseWordPressTwo" class="accordion-collapse collapse" aria-labelledby="headingWordPressTwo" data-bs-parent="#accordionWordPress">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Introduction to HTML and CSS</li>
+                                            <li>Topic 2: Mastering JavaScript Fundamentals</li>
+                                            <li>Topic 3: Responsive Web Design with CSS</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingWordPressThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWordPressThree" aria-expanded="true" aria-controls="collapseWordPressThree">
+                                        Chapter 3: WordPress Development
+                                    </button>
+                                </h2>
+                                <div id="collapseWordPressThree" class="accordion-collapse collapse" aria-labelledby="headingWordPressThree" data-bs-parent="#accordionWordPress">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Why WordPress for Content Management</li>
+                                            <li>Topic 2: WordPress Installation and Setup</li>
+                                            <li>Topic 3: Theme Development</li>
+                                            <li>Topic 4: Creating Custom WordPress Themes</li>
+                                            <li>Topic 5: Plugin Development</li>
+                                            <li>Topic 6: Creating Custom WordPress Plugins</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingWordPressFour">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWordPressFour" aria-expanded="true" aria-controls="collapseWordPressFour">
+                                        Chapter 4: Advanced PHP
+                                    </button>
+                                </h2>
+                                <div id="collapseWordPressFour" class="accordion-collapse collapse" aria-labelledby="headingWordPressFour" data-bs-parent="#accordionWordPress">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: PHP Basics and Syntax</li>
+                                            <li>Topic 2: Working with MySQL in PHP</li>
+                                            <li>Topic 3: Advanced PHP Topics</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingWordPressFive">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWordPressFive" aria-expanded="true" aria-controls="collapseWordPressFive">
+                                        Chapter 5: Deployment and Hosting
+                                    </button>
+                                </h2>
+                                <div id="collapseWordPressFive" class="accordion-collapse collapse" aria-labelledby="headingWordPressFive" data-bs-parent="#accordionWordPress">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Hosting WordPress Websites</li>
+                                            <li>Topic 2: Security and Performance Optimization</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingWordPressSix">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWordPressSix" aria-expanded="true" aria-controls="collapseWordPressSix">
+                                        Chapter 6: Major Project
+                                    </button>
+                                </h2>
+                                <div id="collapseWordPressSix" class="accordion-collapse collapse" aria-labelledby="headingWordPressSix" data-bs-parent="#accordionWordPress">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Project Idea and Planning</li>
+                                            <li>Topic 2: Design and Wireframing</li>
+                                            <li>Topic 3: WordPress Development</li>
+                                            <li>Topic 4: Testing and Debugging</li>
+                                            <li>Topic 5: Deployment and Maintenance</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingWordPressSeven">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWordPressSeven" aria-expanded="true" aria-controls="collapseWordPressSeven">
+                                        Chapter 7: Real-World Projects
+                                    </button>
+                                </h2>
+                                <div id="collapseWordPressSeven" class="accordion-collapse collapse" aria-labelledby="headingWordPressSeven" data-bs-parent="#accordionWordPress">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: News Website Development</li>
+                                            <li>Topic 2: eCommerce Store with WooCommerce</li>
+                                            <li>Topic 3: Portfolio Website for a Client</li>
+                                            <li>Topic 4: Custom WordPress Plugin Development</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Android Developer Syllabus Section -->
+                <div class="card mt-5" id="AndroidDev">
+                    <div class="card-header">Android Developer Syllabus</div>
+                    <div class="card-body">
+                        <h4>Modules</h4>
+                        <div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingAndroidDevOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAndroidDevOne" aria-expanded="true" aria-controls="collapseAndroidDevOne">
+                                        Chapter 1: Introduction to Android Development
+                                    </button>
+                                </h2>
+                                <div id="collapseAndroidDevOne" class="accordion-collapse collapse show" aria-labelledby="headingAndroidDevOne" data-bs-parent="#accordionAndroidDev">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Understanding the Android Ecosystem</li>
+                                            <li>Topic 2: Setting Up Android Development Environment</li>
+                                            <li>Topic 3: Introduction to Java/Kotlin Programming</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingAndroidDevTwo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAndroidDevTwo" aria-expanded="true" aria-controls="collapseAndroidDevTwo">
+                                        Chapter 2: User Interface (UI) Design
+                                    </button>
+                                </h2>
+                                <div id="collapseAndroidDevTwo" class="accordion-collapse collapse" aria-labelledby="headingAndroidDevTwo" data-bs-parent="#accordionAndroidDev">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Creating User Interfaces with XML</li>
+                                            <li>Topic 2: Layouts and Views</li>
+                                            <li>Topic 3: Material Design Guidelines</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingAndroidDevThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAndroidDevThree" aria-expanded="true" aria-controls="collapseAndroidDevThree">
+                                        Chapter 3: Android App Architecture
+                                    </button>
+                                </h2>
+                                <div id="collapseAndroidDevThree" class="accordion-collapse collapse" aria-labelledby="headingAndroidDevThree" data-bs-parent="#accordionAndroidDev">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Model-View-Controller (MVC) Pattern</li>
+                                            <li>Topic 2: Model-View-Presenter (MVP) Pattern</li>
+                                            <li>Topic 3: Model-View-ViewModel (MVVM) Pattern</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingAndroidDevFour">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAndroidDevFour" aria-expanded="true" aria-controls="collapseAndroidDevFour">
+                                        Chapter 4: Data Storage and Management
+                                    </button>
+                                </h2>
+                                <div id="collapseAndroidDevFour" class="accordion-collapse collapse" aria-labelledby="headingAndroidDevFour" data-bs-parent="#accordionAndroidDev">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Working with SQLite Databases</li>
+                                            <li>Topic 2: Using Firebase Realtime Database</li>
+                                            <li>Topic 3: Content Providers and Data Binding</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingAndroidDevFive">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAndroidDevFive" aria-expanded="true" aria-controls="collapseAndroidDevFive">
+                                        Chapter 5: Networking and API Integration
+                                    </button>
+                                </h2>
+                                <div id="collapseAndroidDevFive" class="accordion-collapse collapse" aria-labelledby="headingAndroidDevFive" data-bs-parent="#accordionAndroidDev">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Making Network Requests with Retrofit</li>
+                                            <li>Topic 2: Handling JSON Data and API Integration</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingAndroidDevSix">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAndroidDevSix" aria-expanded="true" aria-controls="collapseAndroidDevSix">
+                                        Chapter 6: Advanced Android Topics
+                                    </button>
+                                </h2>
+                                <div id="collapseAndroidDevSix" class="accordion-collapse collapse" aria-labelledby="headingAndroidDevSix" data-bs-parent="#accordionAndroidDev">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Working with Sensors and Location</li>
+                                            <li>Topic 2: Background Tasks and Services</li>
+                                            <li>Topic 3: Push Notifications and Cloud Messaging</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingAndroidDevSeven">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAndroidDevSeven" aria-expanded="true" aria-controls="collapseAndroidDevSeven">
+                                        Chapter 7: Real-World Android Projects
+                                    </button>
+                                </h2>
+                                <div id="collapseAndroidDevSeven" class="accordion-collapse collapse" aria-labelledby="headingAndroidDevSeven" data-bs-parent="#accordionAndroidDev">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Building a Social Media App</li>
+                                            <li>Topic 2: Developing a Location-Based App</li>
+                                            <li>Topic 3: Creating a Custom Launcher</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Science Syllabus Section -->
+                <div class="card mt-5" id="DataScience">
+                    <div class="card-header">Data Science Syllabus</div>
+                    <div class="card-body">
+                        <h4>Modules</h4>
+                        <div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingDataScienceOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDataScienceOne" aria-expanded="true" aria-controls="collapseDataScienceOne">
+                                        Chapter 1: Introduction to Data Science
+                                    </button>
+                                </h2>
+                                <div id="collapseDataScienceOne" class="accordion-collapse collapse show" aria-labelledby="headingDataScienceOne" data-bs-parent="#accordionDataScience">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Understanding the Basics of Data Science</li>
+                                            <li>Topic 2: Data Collection and Cleaning</li>
+                                            <li>Topic 3: Introduction to Data Analysis</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingDataScienceTwo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDataScienceTwo" aria-expanded="true" aria-controls="collapseDataScienceTwo">
+                                        Chapter 2: Data Manipulation and Visualization
+                                    </button>
+                                </h2>
+                                <div id="collapseDataScienceTwo" class="accordion-collapse collapse" aria-labelledby="headingDataScienceTwo" data-bs-parent="#accordionDataScience">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Using Python for Data Manipulation</li>
+                                            <li>Topic 2: Data Visualization with Matplotlib and Seaborn</li>
+                                            <li>Topic 3: Exploratory Data Analysis</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingDataScienceThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDataScienceThree" aria-expanded="true" aria-controls="collapseDataScienceThree">
+                                        Chapter 3: Machine Learning Fundamentals
+                                    </button>
+                                </h2>
+                                <div id="collapseDataScienceThree" class="accordion-collapse collapse" aria-labelledby="headingDataScienceThree" data-bs-parent="#accordionDataScience">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Introduction to Machine Learning</li>
+                                            <li>Topic 2: Supervised Learning Algorithms</li>
+                                            <li>Topic 3: Unsupervised Learning Algorithms</li>
+                                            <li>Topic 4: Model Evaluation and Selection</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingDataScienceFour">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDataScienceFour" aria-expanded="true" aria-controls="collapseDataScienceFour">
+                                        Chapter 4: Deep Learning and Neural Networks
+                                    </button>
+                                </h2>
+                                <div id="collapseDataScienceFour" class="accordion-collapse collapse" aria-labelledby="headingDataScienceFour" data-bs-parent="#accordionDataScience">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Introduction to Deep Learning</li>
+                                            <li>Topic 2: Neural Networks and Deep Learning Frameworks</li>
+                                            <li>Topic 3: Computer Vision and Natural Language Processing</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingDataScienceFive">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDataScienceFive" aria-expanded="true" aria-controls="collapseDataScienceFive">
+                                        Chapter 5: Data Science Tools and Libraries
+                                    </button>
+                                </h2>
+                                <div id="collapseDataScienceFive" class="accordion-collapse collapse" aria-labelledby="headingDataScienceFive" data-bs-parent="#accordionDataScience">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Working with Jupyter Notebooks</li>
+                                            <li>Topic 2: Pandas and NumPy for Data Analysis</li>
+                                            <li>Topic 3: Scikit-Learn for Machine Learning</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingDataScienceSix">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDataScienceSix" aria-expanded="true" aria-controls="collapseDataScienceSix">
+                                        Chapter 6: Model Deployment and Optimization
+                                    </button>
+                                </h2>
+                                <div id="collapseDataScienceSix" class="accordion-collapse collapse" aria-labelledby="headingDataScienceSix" data-bs-parent="#accordionDataScience">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Deploying Machine Learning Models</li>
+                                            <li>Topic 2: Hyperparameter Tuning and Model Optimization</li>
+                                            <li>Topic 3: Model Interpretability and Explainability</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingDataScienceSeven">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDataScienceSeven" aria-expanded="true" aria-controls="collapseDataScienceSeven">
+                                        Chapter 7: Real-World Data Science Projects
+                                    </button>
+                                </h2>
+                                <div id="collapseDataScienceSeven" class="accordion-collapse collapse" aria-labelledby="headingDataScienceSeven" data-bs-parent="#accordionDataScience">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Predictive Analytics for Business</li>
+                                            <li>Topic 2: Image Classification with Deep Learning</li>
+                                            <li>Topic 3: Natural Language Processing Applications</li>
+                                            <li>Topic 4: Recommendation Systems</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card mt-5" id="NetworkAdministration">
+                    <div class="card-header">Network Administration Syllabus</div>
+                    <div class="card-body">
+                        <h4>Modules</h4>
+                        <div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNetworkAdministrationOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNetworkAdministrationOne" aria-expanded="true" aria-controls="collapseNetworkAdministrationOne">
+                                        1. Introduction to Networking
+                                    </button>
+                                </h2>
+                                <div id="collapseNetworkAdministrationOne" class="accordion-collapse collapse show" aria-labelledby="headingNetworkAdministrationOne" data-bs-parent="#accordionNetworkAdministration">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1:Understanding Networking Fundamentals</li>
+                                            <li>Topic 2:Introduction to Network Topologies</li>
+                                            <li>Topic 3:Setting Up Network Devices</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Network Administration Modules -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNetworkAdministrationTwo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNetworkAdministrationTwo" aria-expanded="true" aria-controls="collapseNetworkAdministrationTwo">
+                                        Chapter 2: Network Protocols and Services
+                                    </button>
+                                </h2>
+                                <div id="collapseNetworkAdministrationTwo" class="accordion-collapse collapse" aria-labelledby="headingNetworkAdministrationTwo" data-bs-parent="#accordionNetworkAdministration">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: TCP/IP and OSI Model</li>
+                                            <li>Topic 2: DNS, DHCP, and IP Addressing</li>
+                                            <li>Topic 3: Routing and Switching</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNetworkAdministrationThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNetworkAdministrationThree" aria-expanded="true" aria-controls="collapseNetworkAdministrationThree">
+                                        Chapter 3: Network Security
+                                    </button>
+                                </h2>
+                                <div id="collapseNetworkAdministrationThree" class="accordion-collapse collapse" aria-labelledby="headingNetworkAdministrationThree" data-bs-parent="#accordionNetworkAdministration">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Firewalls and Intrusion Detection Systems</li>
+                                            <li>Topic 2: Virtual Private Networks (VPNs)</li>
+                                            <li>Topic 3: Network Security Best Practices</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNetworkAdministrationFour">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNetworkAdministrationFour" aria-expanded="true" aria-controls="collapseNetworkAdministrationFour">
+                                        Chapter 4: Network Administration Tools
+                                    </button>
+                                </h2>
+                                <div id="collapseNetworkAdministrationFour" class="accordion-collapse collapse" aria-labelledby="headingNetworkAdministrationFour" data-bs-parent="#accordionNetworkAdministration">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Network Monitoring and Management</li>
+                                            <li>Topic 2: Troubleshooting Network Issues</li>
+                                            <li>Topic 3: Configuration and Device Management</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNetworkAdministrationFive">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNetworkAdministrationFive" aria-expanded="true" aria-controls="collapseNetworkAdministrationFive">
+                                        Chapter 5: Wireless and Cloud Networking
+                                    </button>
+                                </h2>
+                                <div id="collapseNetworkAdministrationFive" class="accordion-collapse collapse" aria-labelledby="headingNetworkAdministrationFive" data-bs-parent="#accordionNetworkAdministration">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Wireless Networking (Wi-Fi)</li>
+                                            <li>Topic 2: Cloud Networking and Services</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNetworkAdministrationSix">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNetworkAdministrationSix" aria-expanded="true" aria-controls="collapseNetworkAdministrationSix">
+                                        Chapter 6: Network Design and Optimization
+                                    </button>
+                                </h2>
+                                <div id="collapseNetworkAdministrationSix" class="accordion-collapse collapse" aria-labelledby="headingNetworkAdministrationSix" data-bs-parent="#accordionNetworkAdministration">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Network Architecture and Design Principles</li>
+                                            <li>Topic 2: Performance Optimization and Scalability</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNetworkAdministrationSeven">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNetworkAdministrationSeven" aria-expanded="true" aria-controls="collapseNetworkAdministrationSeven">
+                                        Chapter 7: Real-World Network Projects
+                                    </button>
+                                </h2>
+                                <div id="collapseNetworkAdministrationSeven" class="accordion-collapse collapse" aria-labelledby="headingNetworkAdministrationSeven" data-bs-parent="#accordionNetworkAdministration">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Setting Up Enterprise Networks</li>
+                                            <li>Topic 2: Implementing Secure Data Centres</li>
+                                            <li>Topic 3: Managing Large-Scale Networks</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card mt-5" id="MachineLearning">
+                    <div class="card-header">Machine Learning Syllabus</div>
+                    <div class="card-body">
+                        <h4>Modules</h4>
+                        <div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingMachineLearningOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMachineLearningOne" aria-expanded="true" aria-controls="collapseMachineLearningOne">
+                                        Chapter 1. Introduction to Machine Learning
+                                    </button>
+                                </h2>
+                                <div id="collapseMachineLearningOne" class="accordion-collapse collapse show" aria-labelledby="headingMachineLearningOne" data-bs-parent="#accordionMachineLearning">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1:Understanding the Basics of Machine Learning</li>
+                                            <li>Topic 2:Exploring Supervised Learning</li>
+                                            <li>Topic 3:Setting Up Your ML Development Environment</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Machine Learning Modules -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingMachineLearningTwo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMachineLearningTwo" aria-expanded="true" aria-controls="collapseMachineLearningTwo">
+                                        Chapter 2: Data Preprocessing and Feature Engineering
+                                    </button>
+                                </h2>
+                                <div id="collapseMachineLearningTwo" class="accordion-collapse collapse" aria-labelledby="headingMachineLearningTwo" data-bs-parent="#accordionMachineLearning">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Data Cleaning and Transformation</li>
+                                            <li>Topic 2: Feature Selection and Extraction</li>
+                                            <li>Topic 3: Dealing with Imbalanced Data</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingMachineLearningThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMachineLearningThree" aria-expanded="true" aria-controls="collapseMachineLearningThree">
+                                        Chapter 3: Supervised Learning Algorithms
+                                    </button>
+                                </h2>
+                                <div id="collapseMachineLearningThree" class="accordion-collapse collapse" aria-labelledby="headingMachineLearningThree" data-bs-parent="#accordionMachineLearning">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Linear Regression and Logistic Regression</li>
+                                            <li>Topic 2: Decision Trees and Random Forest</li>
+                                            <li>Topic 3: Support Vector Machines (SVM)</li>
+                                            <li>Topic 4: Naive Bayes and k-Nearest Neighbors (k-NN)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingMachineLearningFour">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMachineLearningFour" aria-expanded="true" aria-controls="collapseMachineLearningFour">
+                                        Chapter 4: Unsupervised Learning and Clustering
+                                    </button>
+                                </h2>
+                                <div id="collapseMachineLearningFour" class="accordion-collapse collapse" aria-labelledby="headingMachineLearningFour" data-bs-parent="#accordionMachineLearning">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: K-Means Clustering</li>
+                                            <li>Topic 2: Hierarchical Clustering</li>
+                                            <li>Topic 3: Principal Component Analysis (PCA)</li>
+                                            <li>Topic 4: Anomaly Detection</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingMachineLearningFive">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMachineLearningFive" aria-expanded="true" aria-controls="collapseMachineLearningFive">
+                                        Chapter 5: Neural Networks and Deep Learning
+                                    </button>
+                                </h2>
+                                <div id="collapseMachineLearningFive" class="accordion-collapse collapse" aria-labelledby="headingMachineLearningFive" data-bs-parent="#accordionMachineLearning">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Introduction to Neural Networks</li>
+                                            <li>Topic 2: Deep Learning with TensorFlow and Keras</li>
+                                            <li>Topic 3: Convolutional Neural Networks (CNN)</li>
+                                            <li>Topic 4: Recurrent Neural Networks (RNN)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingMachineLearningSix">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMachineLearningSix" aria-expanded="true" aria-controls="collapseMachineLearningSix">
+                                        Chapter 6: Model Evaluation and Hyperparameter Tuning
+                                    </button>
+                                </h2>
+                                <div id="collapseMachineLearningSix" class="accordion-collapse collapse" aria-labelledby="headingMachineLearningSix" data-bs-parent="#accordionMachineLearning">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Cross-Validation and Model Metrics</li>
+                                            <li>Topic 2: Hyperparameter Optimization</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingMachineLearningSeven">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMachineLearningSeven" aria-expanded="true" aria-controls="collapseMachineLearningSeven">
+                                        Chapter 7: Real-World ML Applications
+                                    </button>
+                                </h2>
+                                <div id="collapseMachineLearningSeven" class="accordion-collapse collapse" aria-labelledby="headingMachineLearningSeven" data-bs-parent="#accordionMachineLearning">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Natural Language Processing (NLP)</li>
+                                            <li>Topic 2: Computer Vision and Image Recognition</li>
+                                            <li>Topic 3: Recommendation Systems</li>
+                                            <li>Topic 4: Time Series Analysis</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card mt-5" id="DevOps">
+                    <div class="card-header">DevOps Engineering Syllabus</div>
+                    <div class="card-body">
+                        <h4>Modules</h4>
+                        <div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingDevOpsOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDevOpsOne" aria-expanded="true" aria-controls="collapseDevOpsOne">
+                                        Chapter 1. DevOps Fundamentals
+                                    </button>
+                                </h2>
+                                <div id="collapseDevOpsOne" class="accordion-collapse collapse show" aria-labelledby="headingDevOpsOne" data-bs-parent="#accordionDevOps">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Introduction to DevOps Principles</li>
+                                            <li>Topic 2: Collaborative Development and Operations</li>
+                                            <li>Topic 3: Continuous Integration and Continuous Deployment (CI/CD)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional DevOps Modules -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingDevOpsTwo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDevOpsTwo" aria-expanded="true" aria-controls="collapseDevOpsTwo">
+                                        Chapter 2: Version Control and Git
+                                    </button>
+                                </h2>
+                                <div id="collapseDevOpsTwo" class="accordion-collapse collapse" aria-labelledby="headingDevOpsTwo" data-bs-parent="#accordionDevOps">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Git Fundamentals and Workflow</li>
+                                            <li>Topic 2: Branching Strategies and Code Review</li>
+                                            <li>Topic 3: Git Best Practices in DevOps</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingDevOpsThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDevOpsThree" aria-expanded="true" aria-controls="collapseDevOpsThree">
+                                        Chapter 3: Infrastructure as Code (IaC)
+                                    </button>
+                                </h2>
+                                <div id="collapseDevOpsThree" class="accordion-collapse collapse" aria-labelledby="headingDevOpsThree" data-bs-parent="#accordionDevOps">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Managing Infrastructure with Terraform</li>
+                                            <li>Topic 2: Automating Deployments with Ansible</li>
+                                            <li>Topic 3: Container Orchestration with Kubernetes</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingDevOpsFour">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDevOpsFour" aria-expanded="true" aria-controls="collapseDevOpsFour">
+                                        Chapter 4: Continuous Integration and Deployment (CI/CD)
+                                    </button>
+                                </h2>
+                                <div id="collapseDevOpsFour" class="accordion-collapse collapse" aria-labelledby="headingDevOpsFour" data-bs-parent="#accordionDevOps">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Setting Up Jenkins or GitLab CI/CD</li>
+                                            <li>Topic 2: Creating Pipeline Jobs and Workflows</li>
+                                            <li>Topic 3: Automated Testing and Deployment Strategies</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingDevOpsFive">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDevOpsFive" aria-expanded="true" aria-controls="collapseDevOpsFive">
+                                        Chapter 5: Monitoring and Alerting
+                                    </button>
+                                </h2>
+                                <div id="collapseDevOpsFive" class="accordion-collapse collapse" aria-labelledby="headingDevOpsFive" data-bs-parent="#accordionDevOps">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Log Management and Analysis</li>
+                                            <li>Topic 2: Real-time Monitoring with Prometheus</li>
+                                            <li>Topic 3: Incident Response and Alerting</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingDevOpsSix">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDevOpsSix" aria-expanded="true" aria-controls="collapseDevOpsSix">
+                                        Chapter 6: Security in DevOps
+                                    </button>
+                                </h2>
+                                <div id="collapseDevOpsSix" class="accordion-collapse collapse" aria-labelledby="headingDevOpsSix" data-bs-parent="#accordionDevOps">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: DevSecOps Principles and Best Practices</li>
+                                            <li>Topic 2: Security Scanning and Vulnerability Management</li>
+                                            <li>Topic 3: Identity and Access Management (IAM)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingDevOpsSeven">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDevOpsSeven" aria-expanded="true" aria-controls="collapseDevOpsSeven">
+                                        Chapter 7: Real-World DevOps Projects
+                                    </button>
+                                </h2>
+                                <div id="collapseDevOpsSeven" class="accordion-collapse collapse" aria-labelledby="headingDevOpsSeven" data-bs-parent="#accordionDevOps">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Automated Deployment Pipelines</li>
+                                            <li>Topic 2: Scalable Infrastructure Design</li>
+                                            <li>Topic 3: Disaster Recovery and Business Continuity</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Software Testing Syllabus Section -->
+                <div class="card mt-5" id="SoftwareEng">
+                    <div class="card-header">Software Engineering Syllabus</div>
+                    <div class="card-body">
+                        <h4>Modules</h4>
+                        <div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSoftwareEngOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSoftwareEngOne" aria-expanded="true" aria-controls="collapseSoftwareEngOne">
+                                        Chapter 1: Introduction to Software Engineering
+                                    </button>
+                                </h2>
+                                <div id="collapseSoftwareEngOne" class="accordion-collapse collapse show" aria-labelledby="headingSoftwareEngOne" data-bs-parent="#accordionSoftwareEng">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Understanding Software Development Lifecycle</li>
+                                            <li>Topic 2: Exploring Software Development Models</li>
+                                            <li>Topic 3: Setting Up Your Development Environment</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Software Engineering Modules -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSoftwareEngTwo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSoftwareEngTwo" aria-expanded="true" aria-controls="collapseSoftwareEngTwo">
+                                        Chapter 2: Programming Fundamentals
+                                    </button>
+                                </h2>
+                                <div id="collapseSoftwareEngTwo" class="accordion-collapse collapse" aria-labelledby="headingSoftwareEngTwo" data-bs-parent="#accordionSoftwareEng">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Learning Programming Languages (e.g., Java, Python)</li>
+                                            <li>Topic 2: Data Structures and Algorithms</li>
+                                            <li>Topic 3: Object-Oriented Programming (OOP)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSoftwareEngThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSoftwareEngThree" aria-expanded="true" aria-controls="collapseSoftwareEngThree">
+                                        Chapter 3: Software Design and Architecture
+                                    </button>
+                                </h2>
+                                <div id="collapseSoftwareEngThree" class="accordion-collapse collapse" aria-labelledby="headingSoftwareEngThree" data-bs-parent="#accordionSoftwareEng">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Software Architecture Patterns</li>
+                                            <li>Topic 2: Design Principles and Patterns</li>
+                                            <li>Topic 3: UML and Software Modeling</li>
+                                            <li>Topic 4: Designing for Scalability and Performance</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSoftwareEngFour">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSoftwareEngFour" aria-expanded="true" aria-controls="collapseSoftwareEngFour">
+                                        Chapter 4: Database Management
+                                    </button>
+                                </h2>
+                                <div id="collapseSoftwareEngFour" class="accordion-collapse collapse" aria-labelledby="headingSoftwareEngFour" data-bs-parent="#accordionSoftwareEng">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Relational Database Management Systems (RDBMS)</li>
+                                            <li>Topic 2: NoSQL Databases</li>
+                                            <li>Topic 3: Database Design and Normalization</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSoftwareEngFive">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSoftwareEngFive" aria-expanded="true" aria-controls="collapseSoftwareEngFive">
+                                        Chapter 5: Web Development
+                                    </button>
+                                </h2>
+                                <div id="collapseSoftwareEngFive" class="accordion-collapse collapse" aria-labelledby="headingSoftwareEngFive" data-bs-parent="#accordionSoftwareEng">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Front-End Development (HTML, CSS, JavaScript)</li>
+                                            <li>Topic 2: Server-Side Development (e.g., Node.js, Django)</li>
+                                            <li>Topic 3: API Development</li>
+                                            <li>Topic 4: Web Security and Authentication</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSoftwareEngSix">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSoftwareEngSix" aria-expanded="true" aria-controls="collapseSoftwareEngSix">
+                                        Chapter 6: Software Testing and Quality Assurance
+                                    </button>
+                                </h2>
+                                <div id="collapseSoftwareEngSix" class="accordion-collapse collapse" aria-labelledby="headingSoftwareEngSix" data-bs-parent="#accordionSoftwareEng">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Manual and Automated Testing</li>
+                                            <li>Topic 2: Test-driven Development (TDD)</li>
+                                            <li>Topic 3: Continuous Integration and Testing</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSoftwareEngSeven">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSoftwareEngSeven" aria-expanded="true" aria-controls="collapseSoftwareEngSeven">
+                                        Chapter 7: Software Project Management
+                                    </button>
+                                </h2>
+                                <div id="collapseSoftwareEngSeven" class="accordion-collapse collapse" aria-labelledby="headingSoftwareEngSeven" data-bs-parent="#accordionSoftwareEng">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Project Planning and Estimation</li>
+                                            <li>Topic 2: Agile and Scrum Methodologies</li>
+                                            <li>Topic 3: Version Control with Git</li>
+                                            <li>Topic 4: Software Documentation and Collaboration Tools</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSoftwareEngEight">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSoftwareEngEight" aria-expanded="true" aria-controls="collapseSoftwareEngEight">
+                                        Chapter 8: Real-World Software Projects
+                                    </button>
+                                </h2>
+                                <div id="collapseSoftwareEngEight" class="accordion-collapse collapse" aria-labelledby="headingSoftwareEngEight" data-bs-parent="#accordionSoftwareEng">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Developing a Web Application</li>
+                                            <li>Topic 2: Building Mobile Apps</li>
+                                            <li>Topic 3: Enterprise Software Development</li>
+                                            <li>Topic 4: Open-Source Contributions</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-5" id="SoftwareTesting">
+                    <div class="card-header">Software Testing Syllabus</div>
+                    <div class="card-body">
+                        <h4>Modules</h4>
+                        <div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSoftwareTestingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSoftwareTestingOne" aria-expanded="true" aria-controls="collapseSoftwareTestingOne">
+                                        1. Introduction to Software Testing
+                                    </button>
+                                </h2>
+                                <div id="collapseSoftwareTestingOne" class="accordion-collapse collapse show" aria-labelledby="headingSoftwareTestingOne" data-bs-parent="#accordionSoftwareTesting">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1:Understanding Software Testing Concepts</li>
+                                            <li>Topic 2:Types of Testing: Manual vs. Automated</li>
+                                            <li>Topic 3:Importance of Quality Assurance</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Software Testing Modules -->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSoftwareTestingTwo">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSoftwareTestingTwo" aria-expanded="true" aria-controls="collapseSoftwareTestingTwo">
+                                        Chapter 2: Programming Fundamentals
+                                    </button>
+                                </h2>
+                                <div id="collapseSoftwareTestingTwo" class="accordion-collapse collapse" aria-labelledby="headingSoftwareTestingTwo" data-bs-parent="#accordionSoftwareTesting">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Learning Programming Languages (e.g., Java, Python)</li>
+                                            <li>Topic 2: Data Structures and Algorithms</li>
+                                            <li>Topic 3: Object-Oriented Programming (OOP)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSoftwareTestingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSoftwareTestingThree" aria-expanded="true" aria-controls="collapseSoftwareTestingThree">
+                                        Chapter 3: Software Design and Architecture
+                                    </button>
+                                </h2>
+                                <div id="collapseSoftwareTestingThree" class="accordion-collapse collapse" aria-labelledby="headingSoftwareTestingThree" data-bs-parent="#accordionSoftwareTesting">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Software Architecture Patterns</li>
+                                            <li>Topic 2: Design Principles and Patterns</li>
+                                            <li>Topic 3: UML and Software Modeling</li>
+                                            <li>Topic 4: Designing for Scalability and Performance</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSoftwareTestingFour">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSoftwareTestingFour" aria-expanded="true" aria-controls="collapseSoftwareTestingFour">
+                                        Chapter 4: Database Management
+                                    </button>
+                                </h2>
+                                <div id="collapseSoftwareTestingFour" class="accordion-collapse collapse" aria-labelledby="headingSoftwareTestingFour" data-bs-parent="#accordionSoftwareTesting">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Relational Database Management Systems (RDBMS)</li>
+                                            <li>Topic 2: NoSQL Databases</li>
+                                            <li>Topic 3: Database Design and Normalization</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSoftwareTestingFive">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSoftwareTestingFive" aria-expanded="true" aria-controls="collapseSoftwareTestingFive">
+                                        Chapter 5: Web Development
+                                    </button>
+                                </h2>
+                                <div id="collapseSoftwareTestingFive" class="accordion-collapse collapse" aria-labelledby="headingSoftwareTestingFive" data-bs-parent="#accordionSoftwareTesting">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Front-End Development (HTML, CSS, JavaScript)</li>
+                                            <li>Topic 2: Server-Side Development (e.g., Node.js, Django)</li>
+                                            <li>Topic 3: API Development</li>
+                                            <li>Topic 4: Web Security and Authentication</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSoftwareTestingSix">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSoftwareTestingSix" aria-expanded="true" aria-controls="collapseSoftwareTestingSix">
+                                        Chapter 6: Software Testing and Quality Assurance
+                                    </button>
+                                </h2>
+                                <div id="collapseSoftwareTestingSix" class="accordion-collapse collapse" aria-labelledby="headingSoftwareTestingSix" data-bs-parent="#accordionSoftwareTesting">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Manual and Automated Testing</li>
+                                            <li>Topic 2: Test-driven Development (TDD)</li>
+                                            <li>Topic 3: Continuous Integration and Testing</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSoftwareTestingSeven">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSoftwareTestingSeven" aria-expanded="true" aria-controls="collapseSoftwareTestingSeven">
+                                        Chapter 7: Software Project Management
+                                    </button>
+                                </h2>
+                                <div id="collapseSoftwareTestingSeven" class="accordion-collapse collapse" aria-labelledby="headingSoftwareTestingSeven" data-bs-parent="#accordionSoftwareTesting">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Project Planning and Estimation</li>
+                                            <li>Topic 2: Agile and Scrum Methodologies</li>
+                                            <li>Topic 3: Version Control with Git</li>
+                                            <li>Topic 4: Software Documentation and Collaboration Tools</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingSoftwareTestingEight">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSoftwareTestingEight" aria-expanded="true" aria-controls="collapseSoftwareTestingEight">
+                                        Chapter 8: Real-World Software Projects
+                                    </button>
+                                </h2>
+                                <div id="collapseSoftwareTestingEight" class="accordion-collapse collapse" aria-labelledby="headingSoftwareTestingEight" data-bs-parent="#accordionSoftwareTesting">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Developing a Web Application</li>
+                                            <li>Topic 2: Building Mobile Apps</li>
+                                            <li>Topic 3: Enterprise Software Development</li>
+                                            <li>Topic 4: Open-Source Contributions</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card mt-5" id="NetworkProgramming">
+                    <div class="card-header">Network Programming Syllabus</div>
+                    <div class="card-body">
+                        <h4>Modules</h4>
+                        <div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNetworkProgrammingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNetworkProgrammingOne" aria-expanded="true" aria-controls="collapseNetworkProgrammingOne">
+                                        Chapter 1. Introduction to Network Programming
+                                    </button>
+                                </h2>
+                                <div id="collapseNetworkProgrammingOne" class="accordion-collapse collapse show" aria-labelledby="headingNetworkProgrammingOne" data-bs-parent="#accordionNetworkProgramming">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1:Understanding Network Protocols</li>
+                                            <li>Topic 2:Introduction to Socket Programming</li>
+                                            <li>Topic 3:Working with TCP/IP Protocol</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Additional Network Programming Modules -->
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNetworkProgrammingThree">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNetworkProgrammingThree" aria-expanded="true" aria-controls="collapseNetworkProgrammingThree">
+                                        Chapter 2: Network Protocol Development
+                                    </button>
+                                </h2>
+                                <div id="collapseNetworkProgrammingThree" class="accordion-collapse collapse" aria-labelledby="headingNetworkProgrammingThree" data-bs-parent="#accordionNetworkProgramming">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: TCP/IP and UDP Protocol Implementation</li>
+                                            <li>Topic 2: Custom Protocol Design</li>
+                                            <li>Topic 3: Packet Analysis and Wireshark</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNetworkProgrammingFour">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNetworkProgrammingFour" aria-expanded="true" aria-controls="collapseNetworkProgrammingFour">
+                                        Chapter 3: Network Security and Encryption
+                                    </button>
+                                </h2>
+                                <div id="collapseNetworkProgrammingFour" class="accordion-collapse collapse" aria-labelledby="headingNetworkProgrammingFour" data-bs-parent="#accordionNetworkProgramming">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Secure Socket Layer (SSL) and Transport Layer Security (TLS)</li>
+                                            <li>Topic 2: Cryptography and Public Key Infrastructure (PKI)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNetworkProgrammingFive">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNetworkProgrammingFive" aria-expanded="true" aria-controls="collapseNetworkProgrammingFive">
+                                        Chapter 4: API Development and Web Services
+                                    </button>
+                                </h2>
+                                <div id="collapseNetworkProgrammingFive" class="accordion-collapse collapse" aria-labelledby="headingNetworkProgrammingFive" data-bs-parent="#accordionNetworkProgramming">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: RESTful API Development</li>
+                                            <li>Topic 2: SOAP and Web Services</li>
+                                            <li>Topic 3: API Security and OAuth</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNetworkProgrammingSix">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNetworkProgrammingSix" aria-expanded="true" aria-controls="collapseNetworkProgrammingSix">
+                                        Chapter 5: Network Automation and SDN
+                                    </button>
+                                </h2>
+                                <div id="collapseNetworkProgrammingSix" class="accordion-collapse collapse" aria-labelledby="headingNetworkProgrammingSix" data-bs-parent="#accordionNetworkProgramming">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Scripting with Python and Network Automation</li>
+                                            <li>Topic 2: Software-Defined Networking (SDN)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNetworkProgrammingSeven">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNetworkProgrammingSeven" aria-expanded="true" aria-controls="collapseNetworkProgrammingSeven">
+                                        Chapter 6: Cloud Networking and Virtualization
+                                    </button>
+                                </h2>
+                                <div id="collapseNetworkProgrammingSeven" class="accordion-collapse collapse" aria-labelledby="headingNetworkProgrammingSeven" data-bs-parent="#accordionNetworkProgramming">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Network Virtualization and Cloud Networking</li>
+                                            <li>Topic 2: Container Orchestration (e.g., Kubernetes)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingNetworkProgrammingEight">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNetworkProgrammingEight" aria-expanded="true" aria-controls="collapseNetworkProgrammingEight">
+                                        Chapter 7: Real-World Network Programming Projects
+                                    </button>
+                                </h2>
+                                <div id="collapseNetworkProgrammingEight" class="accordion-collapse collapse" aria-labelledby="headingNetworkProgrammingEight" data-bs-parent="#accordionNetworkProgramming">
+                                    <div class="accordion-body">
+                                        <ul>
+                                            <li>Topic 1: Building Networked Applications</li>
+                                            <li>Topic 2: Implementing Secure VPN Solutions</li>
+                                            <li>Topic 3: Network Automation Projects</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <!-- Bootstrap JS, Popper.js -->
+                <script src="https://cdn.jsdelivr.net/npm/popperjscore@2.11.6/dist/umd/popper.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

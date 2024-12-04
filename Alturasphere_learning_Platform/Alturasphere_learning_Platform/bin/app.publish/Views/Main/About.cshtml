@@ -1,0 +1,662 @@
+﻿@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Main/Navigate.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* styles.css */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            /*background-color: #f8f9fa;
+                color: #333;*/
+            /* display: flex;*/
+            /*justify-content: center;
+                align-items: center;
+                min-height: 100vh;*/
+        }
+
+        .about-us {
+            margin: 50px auto;
+            display: flex;
+            flex-direction: row;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .about-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+            .about-content h1 {
+                font-size: 2.5em;
+                color: #333;
+            }
+
+                .about-content h1 span {
+                    color: #00b4d8;
+                }
+
+            .about-content h2 {
+                font-size: 1.8em;
+                color: #ff6b6b;
+                margin-bottom: 20px;
+            }
+
+            .about-content p {
+                font-size: 1em;
+                color: #555;
+                line-height: 1.6;
+                margin-bottom: 20px;
+            }
+
+        .services {
+            margin-top: 20px;
+        }
+
+        .service {
+            margin-bottom: 20px;
+        }
+
+            .service h3 {
+                font-size: 1.3em;
+                color: #333;
+            }
+
+            .service p {
+                font-size: 1em;
+                color: #666;
+                line-height: 1.5;
+            }
+
+        .about-images {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .main-image {
+            width: 80%;
+            height: auto;
+            border-radius: 50%;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .small-image {
+            width: 60%;
+            height: auto;
+            border-radius: 50%;
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Media query for responsive design */
+        @@media (max-width: 768px) {
+            .about-us {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-images {
+                margin-top: 20px;
+            }
+        }
+
+        /* styles.css */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            /*background-color: #f8f9fa;
+                color: #333;*/
+            /*display: flex;*/
+            /*justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                padding: 20px;*/
+        }
+
+        .core-values-section {
+            display: flex;
+            align-items: center;
+            background-color: #fdf3e6;
+            padding: 40px;
+            border-radius: 8px;
+            max-width: 1200px;
+            position: relative;
+            margin: 50px auto;
+        }
+
+        .text-content {
+            flex: 1;
+            padding: 20px;
+            color: #ffffff;
+            background-color: #006d77;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            .text-content h2 {
+                font-size: 2.5em;
+                color: #ff6b6b;
+            }
+
+                .text-content h2 span {
+                    color: #eaeaea;
+                }
+
+            .text-content p {
+                font-size: 1em;
+                color: #eaeaea;
+                line-height: 1.6;
+                margin-top: 15px;
+            }
+
+        .image-container {
+            flex: 1;
+            padding: 20px;
+            position: relative;
+        }
+
+            .image-container img {
+                width: 100%;
+                border-radius: 8px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                clip-path: ellipse(75% 50% at 50% 50%);
+            }
+
+        /* Media query for responsive design */
+        @@media (max-width: 768px) {
+            .core-values-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .text-content, .image-container {
+                width: 100%;
+            }
+
+            .image-container {
+                margin-top: 20px;
+            }
+        }
+
+        .happy-clients-section {
+            text-align: center;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 50px auto;
+        }
+
+            .happy-clients-section h2 {
+                font-size: 2.5em;
+                color: #333;
+                margin-bottom: 30px;
+            }
+
+                .happy-clients-section h2 span {
+                    color: #ff6b6b;
+                }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+
+        .client-card {
+            background-color: #f7f7f7;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+            .client-card:hover {
+                background-color: #fdf3e6;
+            }
+
+        /* Responsive Design */
+        @@media (max-width: 768px) {
+            .core-values-section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .text-content, .image-container {
+                width: 100%;
+            }
+
+            .image-container {
+                margin-top: 20px;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Section Container */
+        .why-choose-us-section {
+            background-color: #fde4d1;
+            padding: 40px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 50px auto;
+            border-radius: 8px;
+        }
+
+            .why-choose-us-section h2 {
+                font-size: 2.5em;
+                color: #333;
+                margin-bottom: 30px;
+            }
+
+                .why-choose-us-section h2 span {
+                    color: #ff6b6b;
+                }
+
+        .why-choose-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .text-box {
+            flex: 1;
+            padding: 20px;
+            color: #333;
+        }
+
+            .text-box h3 {
+                font-size: 1.8em;
+                color: #333;
+                margin-bottom: 10px;
+            }
+
+                .text-box h3::after {
+                    content: "";
+                    display: block;
+                    width: 50px;
+                    height: 3px;
+                    background-color: #ff6b6b;
+                    margin-top: 5px;
+                    margin-bottom: 20px;
+                }
+
+            .text-box p {
+                font-size: 1em;
+                color: #666;
+                line-height: 1.6;
+            }
+
+        .image-box {
+            flex: 1;
+            position: relative;
+            padding: 20px;
+        }
+
+            .image-box img {
+                width: 100%;
+                border-radius: 8px;
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+
+        .icon-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #ffffff;
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+            .icon-overlay img {
+                width: 40px;
+                height: 40px;
+            }
+
+        /* Responsive Design */
+        @@media (max-width: 768px) {
+            .why-choose-content {
+                flex-direction: column;
+            }
+
+            .text-box, .image-box {
+                width: 100%;
+                padding: 0;
+            }
+
+            .image-box {
+                margin-top: 20px;
+            }
+        }
+
+      
+        /* body {
+          font-family: Arial, sans-serif;
+          color: #333;
+          margin: 0;
+          padding: 0;
+          background-color: #f4f4f4;
+        }*/
+        .section-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 50px 20px;
+            background-color: #fafafa;
+            margin: 50px auto;
+        }
+
+        .heading {
+            font-size: 2em;
+            color: #FF6347; /* Tomato color */
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            position: relative;
+            animation: fadeIn 1.5s ease;
+            margin: 50px auto;
+            margin-left: 140px;
+        }
+        /* Founder Section */
+        .founder-container {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            width: 80%;
+            margin-bottom: 40px;
+            transition: transform 0.3s ease;
+            margin: 50px auto;
+        }
+
+            .founder-container:hover {
+                transform: scale(1.05);
+            }
+
+        .founder-img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+            animation: scaleUp 1s ease;
+        }
+
+        .founder-details {
+            text-align: left;
+        }
+
+        .founder-name {
+            font-size: 1.5em;
+            color: #FF6347;
+        }
+
+        .founder-title {
+            color: #555;
+            font-size: 1.2em;
+            margin-top: 5px;
+        }
+        /* Team Section */
+        .team-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .team-member {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            animation: fadeIn 1.5s ease;
+        }
+
+            .team-member:hover {
+                transform: scale(1.05);
+            }
+
+        .team-img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            margin-bottom: 10px;
+        }
+
+        .team-name {
+            font-size: 1.2em;
+            color: #4682B4; /* Steel Blue color */
+        }
+
+        .team-role {
+            color: #666;
+            font-size: 1em;
+        }
+        /* Animations */
+        @@keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @@keyframes scaleUp {
+            from {
+                transform: scale(0.8);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+    </style>
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+            const animatedElements = document.querySelectorAll("[data-animate]");
+            const options = {
+                threshold: 0.5
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        });</script>
+</head>
+<body>
+    <section class="about-us">
+        <div class="about-content">
+            <h1>Altura Sphere <span>Technologies</span></h1>
+            <h2>Your Partner in Digital Marketing Excellence</h2>
+            <p>We offer a comprehensive range of digital solutions designed to meet the diverse needs of modern businesses. Explore our specialized services to discover how we can help you achieve your digital transformation goals.</p>
+            <div class="services">
+                <div class="service">
+                    <h3>Digital Marketing</h3>
+                    <p>Boost your online presence and achieve your business goals with our comprehensive digital marketing services.</p>
+                </div>
+                <div class="service">
+                    <h3>Website Development</h3>
+                    <p>We create stunning, responsive websites that captivate visitors and drive engagement.</p>
+                </div>
+                <div class="service">
+                    <h3>App Development</h3>
+                    <p>Stay ahead in the mobile-first world with our innovative mobile app development services.</p>
+                </div>
+            </div>
+        </div>
+        <div class="about-images">
+            <img src="https://alturasphere.com/wp-content/uploads/2024/07/girl-working-in-office-898x1024.jpg" alt="Team Member 2" class="small-image">
+
+            <img src="https://alturasphere.com/wp-content/uploads/2024/07/1-1.jpg" alt="Team Member 1" class="main-image">
+
+
+        </div>
+    </section>
+    <section class="core-values-section">
+        <div class="text-content">
+            <h2><span>Our</span> Core Values</h2>
+            <p>
+                At Altura Sphere Technologies, our core values—innovation, excellence, integrity, customer-centric focus, collaboration, continuous improvement, and sustainability—guide our actions and define our company culture. We embrace change, ensure high-quality standards, build trust through honesty, prioritize client needs, foster teamwork, commit to ongoing learning, and minimize our environmental impact while contributing positively to the community. These principles drive our mission to deliver exceptional digital solutions and support your business's digital transformation.
+            </p>
+        </div>
+        <div class="image-container">
+            <img src="https://alturasphere.com/wp-content/uploads/2024/07/office-discussion-898x1024.jpg" alt="Team Collaboration">
+        </div>
+    </section>
+    <section class="happy-clients-section">
+        <h2><span>Happy</span> Clients</h2>
+        <div class="clients-grid">
+            <div class="client-card">Opilgo</div>
+            <div class="client-card">RICHA</div>
+            <div class="client-card">Gillink</div>
+            <div class="client-card">AQUME</div>
+            <div class="client-card">Aleana</div>
+            <div class="client-card">Quality</div>
+        </div>
+    </section>
+    <section class="why-choose-us-section">
+        <h2><span>Why Choose</span> Altura Sphere Technologies?</h2>
+        <div class="why-choose-content">
+            <div class="text-box">
+                <h3>Expertise and Experience</h3>
+                <p>
+                    Our team comprises seasoned digital marketing professionals with extensive experience in the field. We stay updated with the latest trends and technologies to provide you with cutting-edge solutions.
+                </p>
+            </div>
+            <div class="image-box">
+
+                <img src="https://media.istockphoto.com/id/1368098469/photo/multi-racial-group-of-people-working-with-paperwork-on-a-board-room-table-at-a-business.webp?a=1&b=1&s=612x612&w=0&k=20&c=tnbvfPIOtiNEDpdQh3ytRYmq2fZAejuTKMl01qtEDfo=" alt="Team discussing project">
+                <div class="icon-overlay">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGkAAABpCAMAAAAOXP0IAAAAeFBMVEX/1roAAAD//////fz/2L3/9/H/8Oa1mITYtZ3Hp5HpxKoSDw30zbIpIx6fhXQ8MixeT0WPeGlvXVEKCQh8aFv/28L/9e//+vb/4Mv/6dr/8OX/38lpWE2mi3n/697/5NKGcGEaFhNWSD8jHRpBNy8xKSS+n4vOrZaglLQkAAAB/ElEQVRoge3a23KCMBAG4EgABZUKIQTxjKf3f8MmQVGwhXbM7rRM/quFC74BNuJMljhYIVYyLFET6ZOEv8y5ayQ8X2b0G4kWuUuMxt35X0kZN8tUWXltie4gHJUdbUgeyA1VWYknKTP8gprhXi3BQpISN0kAProbRbVEc2hItoWWtvAQIb6UBPBLqsIJ0i3JOBS8He5ShgQRB+xX6EXCeniEonSeiocFEbSGkGvXSlayks4s7MjMoLQedYXtjUlBJySp0JQ07pFGEyv1S2wfRdGeqXIayzIBk+b66EOVpapmUwRpYaXfSiwKgmCjO+IwlmU8gC5HlNZxHCf66bFUliWYVHXEWZV2Pf1hiV3ktzzQlz9eZbkZQpfjSWWSJNUiYgtZnsCkoz56rKdwAL03RGmqFtHkoFH1N/nC4LqcMfaoWH36P68nK70tneR3PT5jSBd1KsKQAitZCUkap2XjsotUpnlqnQYGpPoj1Jm5ASlk/c79L8Z7Egl+kqsJyVCsZKXhS3g7KDg7nyp4e2qI+4QFmoS2Ueg4SzQJp/tcNUuAclOFno9AaPS8mvnwwJ8fF7c5Fh+YcrN6NqcApRRUzxtB3hXPGjNUYgUF5aI1F0YLkBbk9xm0xqzb1rjFi3qwrjW/l21zU5rL8633dOnXmURKhWcgoj2WOMSJzk9u+imFy40bcwAAAABJRU5ErkJggg==" alt="Team discussing project">
+
+                </div>
+            </div>
+        </div>
+        <div class="why-choose-content">
+            <div class="image-box">
+
+                <img src="https://png.pngtree.com/thumb_back/fh260/background/20210906/pngtree-colleagues-research-and-discuss-project-work-in-front-of-the-whiteboard-image_804664.jpg" alt="Team meeting in progress">
+                <div class="icon-overlay">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1bzj6Rnc2sxKlOYIuYvOmgL1waOl1z1JXE-g3axfieUnDayzh" alt="Team discussing project">
+
+                </div>
+            </div>
+            <div class="text-box">
+                <h3>Transparent Communication</h3>
+                <p>
+                    We believe in building trust through transparency. Our clients are kept informed at every stage of their digital marketing journey, with regular updates, detailed reports, and open lines of communication.
+                </p>
+            </div>
+
+        </div>
+        <div class="why-choose-content">
+            <div class="text-box">
+                <h3>Comprehensive Services</h3>
+                <p>
+                    From SEO and PPC to social media marketing and content creation, we offer a full suite of digital marketing services under one roof. This integrated approach ensures consistency and synergy across all your marketing efforts.
+                </p>
+            </div>
+            <div class="image-box">
+
+                <img src="https://media.istockphoto.com/id/1405279677/photo/close-up-of-people-pointing-to-a-graph-with-data.webp?a=1&b=1&s=612x612&w=0&k=20&c=_EZlVyL2nG9AKAhNTkiMCd1V0mOYS1zh0SsCQP9P0w4=" alt="Team discussing project">
+                <div class="icon-overlay">
+                    <img src="data:image/png;base64,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" alt="Team discussing project">
+
+                </div>
+            </div>
+        </div>
+        <div class="why-choose-content">
+            <div class="image-box">
+
+                <img src="https://media.istockphoto.com/id/962294264/photo/business-people-attending-an-exhibition.webp?a=1&b=1&s=612x612&w=0&k=20&c=aIDOpkmFm2pbdbZQvbxPn3eHmadFi6SvrCTCa4BNuEY=" alt="Team meeting in progress">
+                <div class="icon-overlay">
+                    <img src="data:image/png;base64,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" alt="Team discussing project">
+
+                </div>
+            </div>
+            <div class="text-box">
+                <h3>Customer-Centric Focus</h3>
+                <p>
+                    Your success is our success. We are committed to understanding your unique needs and delivering customized solutions that exceed your expectations.
+                </p>
+            </div>
+
+        </div>
+    </section>
+    <section class="section-container">
+        <h2 class="heading">Founder and CEO</h2>
+        <div class="founder-container">
+            <img src="https://alturasphere.com/wp-content/uploads/2024/10/Screenshot-2024-10-10-152932.png" alt="Founder Image" class="founder-img">
+            <div class="founder-details">
+                <div class="founder-name">K. Surya Nandan</div>
+                <div class="founder-title">Founder and CEO</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="section-container">
+        <h2 class="heading">Team Members</h2>
+        <div class="team-container">
+            <div class="team-member">
+                <img src="https://alturasphere.com/wp-content/uploads/2024/10/sam-1-822x1024.jpg" alt="Team Member" class="team-img">
+                <div class="team-name">Mr. Sam Golla Palli</div>
+                <div class="team-role">Marketing Manager</div>
+            </div>
+            <!-- Add more team members as needed -->
+        </div>
+    </section>
+</body>
+</html>
+

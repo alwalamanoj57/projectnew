@@ -1,0 +1,297 @@
+﻿@{
+    ViewBag.Title = "Groups";
+    Layout = "~/Views/Main/Navigate.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+            font-weight: 600;
+        }
+
+        .group-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+            .group-card:hover {
+                transform: translateY(-10px);
+            }
+
+        .group-card-header {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .group-card-body {
+            padding: 20px;
+            color: #333;
+        }
+
+            .group-card-body p {
+                font-size: 1.1rem;
+                line-height: 1.6;
+                margin-bottom: 15px;
+            }
+
+        .group-link {
+            display: inline-block;
+            background-color: #0088cc;
+            color: #fff;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+            .group-link:hover {
+                background-color: #0077b3;
+            }
+
+        .group-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>@ViewBag.Title</h2>
+
+        <div class="group-section">
+            <!-- Artificial Intelligence Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>Artificial Intelligence Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Join our **Artificial Intelligence** Telegram group to stay updated on internship opportunities, discussions, and resources in the AI field.</p>
+                    <a href="https://t.me/ai_internship_group" class="group-link" target="_blank">Join AI Telegram Group</a>
+                </div>
+            </div>
+
+            <!-- Cybersecurity Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>Cybersecurity Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Be a part of our **Cybersecurity** community on Telegram. Join to get updates, discussions, and ask questions related to cybersecurity internships.</p>
+                    <a href="https://t.me/cybersecurity_internship_group" class="group-link" target="_blank">Join Cybersecurity Telegram Group</a>
+                </div>
+            </div>
+
+            <!-- Data Science Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>Data Science Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Stay connected with other aspiring data scientists and get the latest information on internship opportunities in our **Data Science** Telegram group.</p>
+                    <a href="https://t.me/data_science_internship_group" class="group-link" target="_blank">Join Data Science Telegram Group</a>
+                </div>
+            </div>
+
+            <!-- Software Development Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>Software Development Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Join our **Software Development** Telegram group to engage with fellow developers and get updates about internships, coding tips, and more!</p>
+                    <a href="https://t.me/software_development_internship_group" class="group-link" target="_blank">Join Software Development Telegram Group</a>
+                </div>
+            </div>
+
+            <!-- Blockchain Technology Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>Blockchain Technology Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Want to work in blockchain? Join our **Blockchain Technology** Telegram group for updates, discussions, and internship opportunities in the blockchain space.</p>
+                    <a href="https://t.me/blockchain_internship_group" class="group-link" target="_blank">Join Blockchain Telegram Group</a>
+                </div>
+            </div>
+
+            <!-- Internet of Things (IoT) Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>Internet of Things (IoT) Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Join our **Internet of Things (IoT)** Telegram group to network with other IoT enthusiasts, ask questions, and get internship updates in this exciting field.</p>
+                    <a href="https://t.me/iot_internship_group" class="group-link" target="_blank">Join IoT Telegram Group</a>
+                </div>
+            </div>
+
+            <!-- Full Stack Web Development Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>Full Stack Web Development Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Join our **Full Stack Web Development** Telegram group for updates on internship opportunities, discussions, and learning resources in full stack development.</p>
+                    <a href="https://t.me/full_stack_web_dev_group" class="group-link" target="_blank">Join Full Stack Web Development Telegram Group</a>
+                </div>
+            </div>
+
+            <!-- WordPress Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>WordPress Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Join our **WordPress** Telegram group for updates and opportunities in WordPress development and internships.</p>
+                    <a href="https://t.me/wordpress_internship_group" class="group-link" target="_blank">Join WordPress Telegram Group</a>
+                </div>
+            </div>
+
+            <!-- Android Developer Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>Android Developer Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Stay connected with **Android Development** enthusiasts and get internship updates in our Android Developer Telegram group.</p>
+                    <a href="https://t.me/android_developer_internship_group" class="group-link" target="_blank">Join Android Developer Telegram Group</a>
+                </div>
+            </div>
+
+            <!-- Cloud Engineer Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>Cloud Engineer Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Join our **Cloud Engineering** Telegram group to stay updated on internship opportunities and cloud technologies.</p>
+                    <a href="https://t.me/cloud_engineer_internship_group" class="group-link" target="_blank">Join Cloud Engineer Telegram Group</a>
+                </div>
+            </div>
+
+            <!-- DevOps Engineer Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>DevOps Engineer Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Join our **DevOps Engineering** Telegram group for internship updates, discussions, and resources in DevOps practices.</p>
+                    <a href="https://t.me/devops_internship_group" class="group-link" target="_blank">Join DevOps Engineer Telegram Group</a>
+                </div>
+            </div>
+
+            <!-- Machine Learning Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>Machine Learning Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Stay connected with others in the **Machine Learning** field. Join our Telegram group for internship opportunities and discussions.</p>
+                    <a href="https://t.me/machine_learning_internship_group" class="group-link" target="_blank">Join Machine Learning Telegram Group</a>
+                </div>
+            </div>
+
+            <!-- Network Administration Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>Network Administration Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Join our **Network Administration** Telegram group to get the latest internship opportunities and engage in discussions about network technologies.</p>
+                    <a href="https://t.me/network_admin_internship_group" class="group-link" target="_blank">Join Network Administration Telegram Group</a>
+                </div>
+            </div>
+
+            <!-- Network Programmer Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>Network Programmer Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Join the **Network Programming** Telegram group for updates, discussions, and internship opportunities for network programmers.</p>
+                    <a href="https://t.me/network_programmer_internship_group" class="group-link" target="_blank">Join Network Programmer Telegram Group</a>
+                </div>
+            </div>
+
+            <!-- Software Engineering Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>Software Engineering Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Join our **Software Engineering** Telegram group for updates on internships, software development practices, and industry insights.</p>
+                    <a href="https://t.me/software_engineering_internship_group" class="group-link" target="_blank">Join Software Engineering Telegram Group</a>
+                </div>
+            </div>
+
+            <!-- Software Tester Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>Software Tester Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Stay updated on internship opportunities and discussions related to software testing by joining our **Software Testing** Telegram group.</p>
+                    <a href="https://t.me/software_tester_internship_group" class="group-link" target="_blank">Join Software Tester Telegram Group</a>
+                </div>
+            </div>
+
+            <!-- Power BI Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>Power BI Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Join our **Power BI** group for internship updates, learning resources, and discussions on data visualization and analytics.</p>
+                    <a href="https://t.me/power_bi_internship_group" class="group-link" target="_blank">Join Power BI Telegram Group</a>
+                </div>
+            </div>
+
+            <!-- Salesforce Internship Group -->
+            <div class="group-card">
+                <div class="group-card-header">
+                    <span>Salesforce Internship</span>
+                </div>
+                <div class="group-card-body">
+                    <p>Join our **Salesforce** group to get the latest internship opportunities and resources on Salesforce development and CRM.</p>
+                    <a href="https://t.me/salesforce_internship_group" class="group-link" target="_blank">Join Salesforce Telegram Group</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

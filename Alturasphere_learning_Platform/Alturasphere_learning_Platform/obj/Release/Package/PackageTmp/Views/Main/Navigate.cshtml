@@ -1,0 +1,479 @@
+﻿
+@{
+    ViewBag.Title = "Navigate";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - AlturaSphere Technologies Private Limited.</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Layout Styling */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+        }
+
+        header {
+
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+
+        }
+
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1em;
+                transition: color 0.3s ease;
+            }
+
+                nav a:hover {
+                    color: #ddd;
+                }
+
+        .content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9em;
+        }
+
+        .navbar {
+            background-color: #1a1f36;
+            padding: 30px 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 100px;
+            color: white;
+        }
+
+        .navbar nav a {
+            font-size: 25px;
+            color: #ffffff;
+            padding: 10px 20px;
+            margin-top: 80px;
+            margin-left: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+            .navbar nav a:hover {
+                color: #ff6f61;
+            }
+
+        .sidebar {
+            width: 250px;
+            background-color: #264653;
+            color: white;
+            padding: 15px;
+            height: 100vh;
+            position: page;
+            overflow-y: auto;
+        }
+
+
+            .sidebar h2 {
+                margin-bottom: 20px;
+                font-size: 20px;
+                color: #2a9d8f;
+            }
+
+            .sidebar ul {
+                list-style: none;
+                padding: 0;
+            }
+
+                .sidebar ul li {
+                    margin-bottom: 15px;
+                }
+
+                    .sidebar ul li a {
+                        color: white;
+                        text-decoration: none;
+                        font-size: 14px;
+                    }
+
+                        .sidebar ul li a:hover {
+                            text-decoration: underline;
+                        }
+
+        /* Main Content */
+        .main-container {
+            display: flex;
+            margin-left: 0px;
+            padding: 20px;
+        }
+
+        main {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 10px; /* Reduced padding */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .footer-column {
+            flex: 1;
+            padding: 10px;
+            font-size: 14px; /* Smaller font size */
+        }
+
+            .footer-column h3 {
+                font-size: 16px; /* Smaller heading font size */
+                margin-bottom: 10px;
+                text-transform: uppercase;
+            }
+
+            .footer-column p, .footer-column a {
+                color: #fff;
+                font-size: 14px;
+                margin: 5px 0;
+            }
+
+                .footer-column a:hover {
+                    text-decoration: underline;
+                }
+
+        .social-media a {
+            margin: 0 8px; /* Reduced margin */
+            font-size: 18px;
+            color: white;
+        }
+
+            .social-media a:hover {
+                color: #1DA1F2; /* Hover effect color for social media icons */
+            }
+
+        /* Responsiveness for smaller screens */
+        @@media screen and (max-width: 768px) {
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-column {
+                padding: 8px;
+                width: 100%;
+                text-align: center;
+                font-size: 12px; /* Smaller text on mobile */
+            }
+
+            .social-media {
+                margin-top: 10px;
+            }
+
+                .social-media a {
+                    margin: 5px 8px;
+                    font-size: 16px; /* Smaller social icons */
+                }
+
+            .footer-column h3 {
+                font-size: 14px; /* Smaller headings on mobile */
+            }
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #264653;
+            color: white;
+            padding: 15px;
+            height: 100vh;
+            position: page;
+            overflow-y: auto;
+        }
+            .sidebar h2 {
+                margin-bottom: 20px;
+                font-size: 20px;
+                color: #2a9d8f;
+            }
+
+            .sidebar ul {
+                list-style: none;
+                padding: 0;
+            }
+
+                .sidebar ul li {
+                    margin-bottom: 15px;
+                }
+
+                    .sidebar ul li a {
+                        color: white;
+                        text-decoration: none;
+                        font-size: 16px;
+                    }
+
+            .sidebar a {
+                color: white;
+                text-decoration: none;
+                padding: 10px 20px;
+                display: block;
+            }
+
+            .sidebar ul li a:hover {
+                background-color: #1a2d40;
+                text-decoration: underline;
+                border-left: 4px solid #00bcd4;
+            }
+            body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #00ffff; /* Darker background for header */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header .logo {
+            max-height: 60px; /* Adjust logo size */
+            margin-right: 15px; /* Space between logo and text */
+        }
+
+        header h1 {
+            font-size: 28px; /* Slightly smaller font size */
+            margin: 0;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            background-color: #333;
+            padding: 12px 0;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 16px;
+            margin: 0 15px;
+            padding: 8px 18px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        /* Main Content Area Styles */
+        .content {
+            flex: 1;
+            margin: 20px;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #2a2a2a;
+            color: #fff;
+            padding: 30px 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1200px; /* More spacious container */
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-column {
+            flex: 1;
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        .footer-column h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        .footer-column p, .footer-column a {
+            color: #fff;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .footer-column a:hover {
+            text-decoration: underline;
+        }
+
+        .social-media a {
+            margin: 0 12px;
+            font-size: 20px;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        .social-media a:hover {
+            color: #1DA1F2;
+        }
+
+        /* Copyright Notice */
+        footer p {
+            font-size: 14px;
+            margin-top: 20px;
+            font-weight: lighter;
+        }
+
+        /* Responsiveness */
+        @@media screen and (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-column {
+                width: 100%;
+                padding: 8px;
+            }
+
+            .social-media {
+                margin-top: 10px;
+            }
+
+            .social-media a {
+                margin: 5px 10px;
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+      <header>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtho2In9vxVS6IoSmwjPpXb8PUvfT_OPDY5Q&s" alt="Altura Sphere Technologies" class="logo">
+        <h1>AlturaSphere Technologies Learning Platform</h1>
+    </header>
+    <div>    
+        <nav>
+            @Html.ActionLink("Home", "Home")
+            @Html.ActionLink("About Us", "About")
+            @Html.ActionLink("Services", "Services")
+            @Html.ActionLink("Contact Us", "Contact") 
+        </nav>
+    </div>
+    <div class="main-container">
+        <aside class="sidebar">
+            <h2>Learning Platform</h2>
+            <ul>
+                <li><a href="@Url.Action("OverView", "Main")">Overview</a></li>
+                <li><a href="@Url.Action("DashBoard", "Main")">Dashboard</a></li>
+                <li><a href="@Url.Action("Inbox", "Main")">Inbox</a></li>
+                <li><a href="@Url.Action("Lesson", "Main")">Lesson</a></li>
+                <li><a href="@Url.Action("Task", "Main")">Task</a></li>
+                <li><a href="@Url.Action("Groups", "Main")">Group</a></li>
+                <li><a href="@Url.Action("InterView", "Main")">Interview/Mock</a></li>
+                <li><a href="@Url.Action("Class", "Main")">Classes Recording Videos</a></li>
+                <li><a href="@Url.Action("Setting", "Main")">Setting</a></li>
+                <li><a href="@Url.Action("LogOut", "Main")">Logout</a></li>
+            </ul>
+        </aside>
+
+        <main>
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <footer>
+        <div class="footer-container">
+            <!-- Column 1: Contact Information -->
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <p>Phone: 8499845526</p>
+                <p>Email: <a href="mailto:info@alturasphere.com">info@alturasphere.com</a></p>
+                <p>Location: Flat No. 302, Prudhvi Apartments, Street No. 8, Habsiguda, Hyderabad</p>
+            </div>
+
+            <!-- Column 2: Links or Company Information -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul style="list-style-type: none; padding: 0;">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Careers</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Social Media Links -->
+            <div class="footer-column social-media">
+                <h3>Follow Us</h3>
+                <a href="https://www.facebook.com/lobotech" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com/sush_13_9" target="_blank">Instagram</a>
+                <a href="https://www.linkedin.com/in/sushant-hodage-696269219" target="_blank">LinkedIn</a>
+            </div>
+        </div>
+
+        <!-- Copyright Notice -->
+        <p>&copy; 2024 AlturaSphere Technologies Private Limited. All Rights Reserved.</p>
+    </footer>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+

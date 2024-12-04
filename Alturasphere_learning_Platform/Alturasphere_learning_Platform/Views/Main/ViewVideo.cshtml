@@ -1,0 +1,100 @@
+﻿@model Alturasphere_learning_Platform.Models.Videos
+@{
+    ViewBag.Title = "View Video";
+    Layout = "~/Views/Main/Navigate.cshtml";
+}
+
+<div class="video-container">
+    <h2 class="video-title">Video Player</h2>
+
+    <div class="video-wrapper">
+        <!-- Video Player -->
+        <video width="100" controls>
+            <!-- Assuming courseId is passed dynamically from the controller -->
+            <source src="@Url.Action("ViewVideo", "Main", new { id = Model.Id })" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="button-container">
+        <!-- Back Button -->
+        <a href="@Url.Action("EnterId", "Main")" class="back-button">Back to Enter ID</a>
+    </div>
+</div>
+
+<!-- Simple CSS for styling -->
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f4f7fc;
+        margin: 0;
+        padding: 0;
+    }
+
+    .video-container {
+        max-width: 800px;
+        margin: 50px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .video-title {
+        text-align: center;
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .video-wrapper {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        text-align: center;
+    }
+
+    video {
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        display: block;
+        margin: 0 auto;
+    }
+
+    .button-container {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .back-button {
+        padding: 12px 30px;
+        background-color: #4CAF50;
+        color: white;
+        font-size: 16px;
+        text-decoration: none;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+        display: inline-block;
+    }
+
+    .back-button:hover {
+        background-color: #45a049;
+    }
+
+    /* Responsive design */
+    @@media (max-width: 480px) {
+        .video-container {
+            padding: 15px;
+            max-width: 90%;
+        }
+
+        .video-title {
+            font-size: 24px;
+        }
+
+        .back-button {
+            font-size: 14px;
+            padding: 10px 25px;
+        }
+    }
+</style>
